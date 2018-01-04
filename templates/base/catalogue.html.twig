@@ -18,6 +18,8 @@
                 <li><a href="#">Et autres...</a></li>
             </ul>
         </nav>
+
+        
             <ul>
                 {% for c in categories %}
                 <li><a href="" alt="{{ c.cat }}" >{{ c.cat }}</a></li>
@@ -29,9 +31,9 @@
 <!--
             <section class="produits">
                 <div class="grid"> -->
-                    <!--<ul class="grid">-->
-                <!-- <?php
-                error_reporting(E_ALL);
+                    
+    <!-- PHP
+
                 $requeteSQL = "SELECT * FROM produits WHERE categorie = '1' ORDER BY produit CODESQL";
                 $afficherProduits = connexionBDD($requeteSQL, []);
                 foreach($afficherProduits as $element) {
@@ -53,8 +55,8 @@
         </figure>
     CODEHTML;
                 }
-                ?>
-                    </ul>
+
+
                     </div> -->
 
 {% endblock %}

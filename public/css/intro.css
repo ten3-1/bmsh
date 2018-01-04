@@ -2,12 +2,12 @@ body {
     background-color: black;
 }
 
-.mshnb,.boutique{
+.mshnb,.boutique, video, .mains{
     display: none;
     background-size: cover;
     background-position: center;
     position: absolute;
-    border:none;
+    border:0 black solid;
     border-radius: 50%;
     -webkit-box-shadow: inset 0px 0px 51px 39px rgba(0,0,0,1);
     -moz-box-shadow: inset 0px 0px 51px 39px rgba(0,0,0,1);
@@ -15,25 +15,40 @@ body {
 }
 .mshnb {
     background-image: url("../img/mshnb.jpg");
-    left: 950px;
+    left: 880px;
     top: 10px;
-    width: 750px;
-    height: 750px;
+    width: 700px;
+    height: 700px;
 }
 
 .boutique {
     background-image: url("../img/boutique.jpg");
-    left: 150px;
-    top: 300px;
+    left: 10px;
+    top: 270px;
     width: 480px;
     height: 480px;
 }
 
 video {
+    display: none;
     position: absolute;
-    left: 700px;
-    top: 380px;
-    width: 250px;
-    height: 250px;
+    left: 550px;
+    top: 400px;
+    width: 280px;
+    height: 280px;
     border-radius: 50%;
+}
+
+.mains {
+    background-image: url('../img/mains.jpg');
+    position: absolute;
+    font-family: 'Sofia', cursive;
+    text-transform: uppercase;
+    font-size: 2em;    
+    color: white;
+    left: 410px;
+    top: 10px;
+    border-radius: 50%;
+    width: 350px;
+    height: 350px;
 }
