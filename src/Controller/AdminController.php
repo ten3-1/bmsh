@@ -21,5 +21,13 @@ class AdminController extends Controller{
     function addStore(){
         //
     }
-
+    /**
+     * @Route("/admin/modifier-produit", name="modifier-modifier")
+     */
+    function editProd(){
+    $produit = $this->getDoctrine()
+                    ->getRepository(Produits::class)
+                    ->find($id);
+    return $this->render("admin/modifier-produit.html.twig");
+}
 }

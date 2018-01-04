@@ -4,9 +4,12 @@
 namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\ORM\EntityRepository;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
-use AppBundle\Entity\Product;
+use Symfony\Component\HttpFoundation\Request;
+use App\Entity\Produits;
+use App\Entity\Categories;
 
 class CatalogueController extends Controller{
     /**
@@ -43,16 +46,28 @@ class CatalogueController extends Controller{
     }
     public function updateProduct($id){
         $em = $this->getDoctrine()->getManager();
-        $product = $em->getRepository(Product::class)->find($id);
+        $product = $em->getRepository(Produits::class)->find($id);
         //
+    }
+    /**
+     * @Route("/catalogue", name="list")
+     */
+    // la liste des categories (marche OK)
+    public function listCat(){
+        $repository = $this->getDoctrine()->getRepository(Categories::class);
+        $categories = $repository->findAll();
+        return $this->render('base/catalogue.html.twig', array('categories' => $categories));
+    }
 
-    }
-    function showFullCatalogue(){
-        $repository = $this->getDoctrine()->getRepository(Produits::class);
-        $products = $repository->findAll();
-    }
-    function showByCat($cat){
-        $repository = $this->getDoctrine()->getRepository(Produits::class);
-        $listProd = $repository->findBy(["cat"=>$cat]);
-    }
+    // function listProd($id){
+    //     $produit = $this->getDoctrine()
+    //                      ->getRepository(Produits::class)
+    //                      ->findBy(["id" => $id]);
+    //     return $this->render("base/liste/list.html.twig",["produit" => $produits]);
+    // }
+
+    // function showByCat($cat){
+    //     $listCat = $this->getDoctrine()->getRepository(Produits::class)->findBy(["cat"=> $cat]);
+    //     return $this->render("base/$cat.html.twig",array('cat' => $listcat));
+    // }
 }

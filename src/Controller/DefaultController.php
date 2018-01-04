@@ -32,10 +32,9 @@ class DefaultController extends Controller{
     // rooting de toutes les pages, il faut cependant que le fichier existe dans le repertoire base
     public function showPage($page){
         return $this->render("base/$page.html.twig");
-        if (!$tpl = false){
-            return $this->render("404.html.twig");
+        // if (!$tpl = false){
+        //     return $this->render("404.html.twig");
         }
-    }
     /**
      * @Route("contact", name="contact")
      */

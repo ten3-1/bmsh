@@ -1,4 +1,6 @@
 <!-- ceci marchait normalement avant mais ce n'est pas du twig -->
+<!-- cela devra ressembler à ceci à terme mais avec les images à resize-->
+
 <form method="POST">
         <fieldset>
             <legend><strong>Ajouter un nouveau produit</strong></legend>
@@ -9,20 +11,20 @@
                 <option value="3" name="categorie[]">Cake</option>
             </select><br />
             <input type="checkbox" value="1" name="allergene[]"><img class="allergene"  src="{{ asset('./img/icones-allergenes/arachides.png') }}" alt="Allerges arachides">
-            <input type="checkbox" value="2" name="allergene[]"><img class="allergene"  src="{{ asset('./img/icones-allergenes/avoines.png') }}" alt="Allerges avoines">
-            <input type="checkbox" value="3" name="allergene[]"><img class="allergene"  src="{{ asset('./img/icones-allergenes/cereales.png') }}" alt="Allerges cereales">
+            <input type="checkbox" value="2" name="allergene[]"><img class="allergene"  src="{{ asset('./img/icones-allergenes/avoine.png') }}" alt="Allerges avoines">
+            <input type="checkbox" value="3" name="allergene[]"><img class="allergene"  src="{{ asset('./img/icones-allergenes/cereales-gluten.png') }}" alt="Allerges cereales">
             <input type="checkbox" value="4" name="allergene[]"><img class="allergene"  src="{{ asset('./img/icones-allergenes/crustaces.png') }}" alt="Allerges crustaces">
-            <input type="checkbox" value="5" name="allergene[]"><img class="allergene"  src="{{ asset('./img/icones-allergenes/lactose.png') }}" alt="Allerges lactose">
+            <input type="checkbox" value="5" name="allergene[]"><img class="allergene"  src="{{ asset('./img/icones-allergenes/lait.png') }}" alt="Allerges lactose">
             <input type="checkbox" value="6" name="allergene[]"><img class="allergene"  src="{{ asset('./img/icones-allergenes/mais.png') }}" alt="Allerges mais">
-            <input type="checkbox" value="7" name="allergene[]"><img class="allergene"  src="{{ asset('./img/icones-allergenes/nogluten.png') }}" alt="Allerges sans gluten">
-            <input type="checkbox" value="8" name="allergene[]"><img class="allergene"  src="{{ asset('./img/icones-allergenes/noix.png') }}" alt="Allerges noix">
+            <input type="checkbox" value="7" name="allergene[]"><img class="allergene"  src="{{ asset('./img/icones-allergenes/cereales-sans-gluten.png') }}" alt="Allerges sans gluten">
+            <input type="checkbox" value="8" name="allergene[]"><img class="allergene"  src="{{ asset('./img/icones-allergenes/fruits-coques.png') }}" alt="Allerges noix">
             <input type="checkbox" value="9" name="allergene[]"><img class="allergene"  src="{{ asset('./img/icones-allergenes/oeufs.png') }}" alt="Allerges oeufs">
-            <input type="checkbox" value="10" name="allergene[]"><img class="allergene" src="{{ asset('./img/icones-/allerenges/poissons.png') }}" alt="Allerges poissons">
-            <input type="checkbox" value="11" name="allergene[]"><img class="allergene" src="{{ asset('./img/icones-/allerenges/sesames.png') }}" alt="Allerges sesames">
-            <input type="checkbox" value="12" name="allergene[]"><img class="allergene" src="{{ asset('./img/icones-/allerenges/sojas.png') }}" alt="Allerges sojas"><br />
+            <input type="checkbox" value="10" name="allergene[]"><img class="allergene" src="{{ asset('./img/icones-allergenes/poissons.png') }}" alt="Allerges poissons">
+            <input type="checkbox" value="11" name="allergene[]"><img class="allergene" src="{{ asset('./img/icones-allergenes/sesame.png') }}" alt="Allerges sesames">
+            <input type="checkbox" value="12" name="allergene[]"><img class="allergene" src="{{ asset('./img/icones-allergenes/soja.png') }}" alt="Allerges sojas"><br />
             <input type="file"><br />
             <button type="submit" name="submit" value="submit">Valider</button>
-<?php}}
+<?php
 if (isset($_REQUEST["submit"]) && ($_REQUEST["submit"] == "submit"))
 {
     $allergenes = $_POST["allergene"];

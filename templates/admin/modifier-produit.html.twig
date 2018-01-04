@@ -13,7 +13,9 @@ Liste des produits existants
         <th>Allergene</th>
         <th>label</th>
     </tr>
+    {{ }}
     {% for produit in produits %}
+    $product  = $produit->getProduit();
     <tr>
         <td>{% cat.produits %}</td>
     </tr>
