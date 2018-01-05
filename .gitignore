@@ -12,3 +12,4 @@ symfony.lock
 .web-server-pid
 ###< symfony/web-server-bundle ###
 
+php_errors.log
