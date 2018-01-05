@@ -76,7 +76,7 @@ $(function(){
             opacity: 0
         },0, function() {
             // Callback
-            $("#light4").animate({
+            $("#light2").animate({
                     opacity: 1
                 }, 0)
             });
@@ -86,7 +86,7 @@ $(function(){
             opacity: 1
         },0, function() {
             // Callback
-            $("#light4").animate({
+            $("#light2").animate({
                     opacity: 0
                 }, 0)
             });

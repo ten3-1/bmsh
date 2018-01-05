@@ -5,7 +5,7 @@
 {% block body %}
 <main>
     <div class="container" id="parent">
-        <img src="{{ asset('./img/accueil/blanc.PNG') }}" id="flou" class ="sandwich" usemap="#map"/>
+        <img src="{{ asset('./img/accueil/empty.png') }}" id="flou" class ="sandwich" usemap="#map"/>
             <map name="map">
                 <!-- #$-:Image map file created by GIMP Image Map plug-in -->
                 <!-- #$-:GIMP Image Map plug-in by Maurits Rijk -->
@@ -18,8 +18,19 @@
                 <area shape="rect" id="contact" coords="1375,370,1779,889" target="telephone" href="./adresses" />
                 <area shape="rect" id="catalogue" coords="554,1036,1039,1395" target="catalogue" href="./catalogue" />
             </map>
+            
+            <!-- Text foor the navigation -->
+            <div class="textcontainer">
+                <div id="actutext">Actualité</div>
+                <div id="cattext">Catalogue</div>
+                <div id="pierretext">Pierre Ragot</div>
+                <div id="savoirtext">Savoir Faire</div>
+                <div id="bouttext">Nos Boutiques</div>
+                <div id="conttext">Contact</div>
+                <div id="newstext">Newsletter</div>
+            </div>
+            <!-- end of text for navigation -->
             <!--clock-->
-            <div class="support"></div>
                 <div class="clock">
                     <div class="numbers">
                         <ul>
