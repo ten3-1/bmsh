@@ -42,14 +42,14 @@ class Produitsallergenes
     }
     public function setId()
     {
-        return $this->id;
+        return $this->id = $id;
     }
     public function setIdProduit($idProduit)
     {
-        return $this->idProduit;
+        return $this->idProduit = $idProduit;
     }
     public function setIdAllergene($idAllergene)
     {
-        return $this->idAllergene;
+        return $this->idAllergene = $idAllergene;
     }
 }

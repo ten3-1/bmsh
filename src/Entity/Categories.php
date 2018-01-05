@@ -33,10 +33,10 @@ class Categories
     }
     public function setId($id)
     {
-        return $this->id;
+        return $this->id = $id;
     }
     public function setCat($cat)
     {
-        return $this->cat;
+        return $this->cat = $cat;
     }
 }

@@ -120,13 +120,13 @@ class CatalogueController extends Controller
 
 
 
+// la fonction suivante devrait afficher un seul produit avec l'url "/catalogue/{categorie}{produit}"
+// mais pour l'instant elle marche avec l'url "/catalogue/{produit}"
 
-
-
-    /**
-     * @Route("/cataulogue/{name}", name="name")
-     */
-    // fonction d'affichage d'un seul produit
+    // /**
+    //  * @Route("/catalogue/{name}", name="name")
+    //  */
+    // // fonction d'affichage d'un seul produit
  /*   function showProduct($name)
     {
         $produit = $this->getDoctrine()
@@ -137,7 +137,6 @@ class CatalogueController extends Controller
 
 
 
-    
         // fonction d'affichage de tous les produits d'une même catégorie
         // https://zestedesavoir.com/tutoriels/620/developpez-votre-site-web-avec-le-framework-symfony2/395_gerer-la-base-de-donnees-avec-doctrine2/1999_recuperer-ses-entites-avec-doctrine2/
     /*function showListProducts($categorie)

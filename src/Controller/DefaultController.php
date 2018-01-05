@@ -17,24 +17,34 @@ class DefaultController extends Controller{
         return $this->render("base/index.html.twig");
     }
     /**
-     * @Route("/404", name="error-page")
+     * @Route("accueil", name="accueil")
      */
-    // public function show404(){
-    //     $page = false;
-    //     if (!$page){
-    //     throw $this->createNotFoundHttpException();
-    //     }
-    //     return $this->render("404.html.twig");
-    // }
+    function showAccueil(){
+        return $this->render("base/accueil.html.twig");
+    }
     /**
-     * @Route("/{page}", name="{page}")
+     * @Route("pierre-ragot", name="philo")
      */
-    // rooting de toutes les pages, il faut cependant que le fichier existe dans le repertoire base
-    public function showPage($page){
-        return $this->render("base/$page.html.twig");
-        // if (!$tpl = false){
-        //     return $this->render("404.html.twig");
-        }
+    function showAbout(){
+        return $this->render("base/pierre-ragot.html.twig");
+    }
+    /**
+     * @Route("", name="savoir-faire")", name="philo")
+     */
+    function showPhilo(){
+        return $this->render("base/savoir-faire.html.twig");
+    }
+
+    // /**
+    //  * @Route("{page}", name="{page}")
+    //  */
+    // routing de toutes les pages, il faut cependant que le fichier existe dans le repertoire base
+    // public function showStaticPage($page){
+    //     return $this->render("static/$page.html.twig");
+    //     // if (!$tpl = false){
+    //     //     return $this->render("404.html.twig");
+    //     }
+
     /**
      * @Route("contact", name="contact")
      */

@@ -79,30 +79,30 @@ class Produits
     // Setters
     public function setId($id)
     {
-        return $this->id;
+        return $this->id = $id;
     }
     public function setProduit($produit)
     {
-        return $this->produit;
+        return $this->produit = $produit;
     }
     public function setDescription($description)
     {
-        return $this->description;
+        return $this->description = $description;
     }
     public function setCat($cat)
     {
-        return $this->cat;
+        return $this->cat = $cat;
     }
     public function setPhoto($photo)
     {
-        return $this->photo;
+        return $this->photo  = $photo;
     }
     public function setLabel($label)
     {
-        return $this->label;
+        return $this->label = $label;
     }
     public function setActive($active)
     {
-        return $this->active;
+        return $this->active = $active;
     }
 }

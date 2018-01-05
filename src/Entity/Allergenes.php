@@ -53,18 +53,18 @@ class Allergenes
     // Setters
     public function setId($id)
     {
-        return $this->id;
+        return $this->id = $id;
     }
     public function setAllergene($allergene)
     {
-        return $this->allergene;
+        return $this->allergene = $allergene;
     }
     public function setDescription($description)
     {
-        return $this->description;
+        return $this->description = $description;
     }
     public function setIcone($icone)
     {
-        return $this->icone;
+        return $this->icone = $icone;
     }
 }
