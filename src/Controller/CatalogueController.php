@@ -16,17 +16,24 @@ class CatalogueController extends Controller{
      * @Route("/admin/ajouter-produit", name="ajouter-produit")
      */
     public function addProduct($obj){
+        // lie aux functions GET du repository
         $nom    = $obj->getProduit();
         $cat    = $obj->getCat();
         $label  = $obj->getLabel();
         $desc   = $obj->getDesc();
         $photo  = $obj->getUploadedFile();
 
+        // si le formulaire est soumis et valide
         if($form->isSubmitted() && $form->isValid()){
         // Entity Manager c'est le truc qui sert à faire des choses dans la BDD sans rien connaître au langage SQL
         $em = $this->getDoctrine()->getManager();
         $product = new Produits();
-        $product->setProduit($nom)->setCat($cat)->setPhoto($photo)->setLabel($label)->setActive($actif)->setDescription($desc);
+        $product->setProduit($nom)
+                ->setCat($cat)
+                ->setPhoto($photo)
+                ->setLabel($label)
+                ->setActive($actif)
+                ->setDescription($desc);
         // une fois sur le throne, se concentre bien
         $em->persist($product);
         // tire la chasse
@@ -46,28 +53,23 @@ class CatalogueController extends Controller{
     }
     public function updateProduct($id){
         $em = $this->getDoctrine()->getManager();
-        $product = $em->getRepository(Produits::class)->find($id);
+        $product = $em->getRepository(Produits::class)
+                      ->find($id);
         //
     }
-    /**
-     * @Route("/catalogue", name="list")
-     */
-    // la liste des categories (marche OK)
+    // liste toutes les categories
     public function listCat(){
-        $repository = $this->getDoctrine()->getRepository(Categories::class);
-        $categories = $repository->findAll();
-        return $this->render('base/catalogue.html.twig', array('categories' => $categories));
+        $categories = $this->getDoctrine() // utilise doctrine
+                           ->getRepository(Categories::class) // lie à la bdd Categories dans le repository
+                           ->findAll(); // affiche tout
+        // transforme $categories local en variable utilisable dans le fichier catalogue.html.twig
+        return $this->render("base/catalogue.html.twig", ["categories" => $categories]);
     }
 
-    // function listProd($id){
+    // function listProd($id){<
     //     $produit = $this->getDoctrine()
     //                      ->getRepository(Produits::class)
     //                      ->findBy(["id" => $id]);
     //     return $this->render("base/liste/list.html.twig",["produit" => $produits]);
-    // }
-
-    // function showByCat($cat){
-    //     $listCat = $this->getDoctrine()->getRepository(Produits::class)->findBy(["cat"=> $cat]);
-    //     return $this->render("base/$cat.html.twig",array('cat' => $listcat));
     // }
 }
