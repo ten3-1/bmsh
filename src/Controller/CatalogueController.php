@@ -65,11 +65,12 @@ class CatalogueController extends Controller
         //
     }
 
+
     /**
      * @Route("catalogue", name="catalogue")
      */
     // liste toutes les categories
-    public function listCat()
+   public function listCatalogue()
     {
         $categories = $this->getDoctrine() // utilise doctrine
                            ->getRepository(Categories::class) // lie à la bdd Categories dans le repository
@@ -79,33 +80,74 @@ class CatalogueController extends Controller
     }
 
 
+
+// copie du code du dessus TEST pour faire afficher dans l'url le bon chemin
+
     /**
-     * @Route("/list/{name}", name="{name}")
+     * @Route("catalogue/{categories}", name="categorie")
      */
-    // fonction d'affichage d'un seul produit
-    function showProduct($name)
+    // liste toutes les categories
+   public function listCategories($categories)
     {
-        $produit = $this->getDoctrine()
-                        ->getRepository(Produits::class)
-                        ->findBy(["produit" => $name]);
-        return $this->render("base/list.html.twig", ["produit" => $produit]);
+        $categories = $this->getDoctrine() // utilise doctrine
+                           ->getRepository(Categories::class) // lie à la bdd Categories dans le repository
+                           ->findBy(["cat" => $categories]);
+        // transforme $categories local en variable utilisable dans le fichier catalogue.html.twig
+        return $this->render("base/catalogue.html.twig", ["categories" => $categories]);
     }
 
 
 
-        /**
-     * @Route("/list/{categorie}", name="{categorie}")
+
+// ---------------------------- TEST affichage catégorie QUI MARCHE !!!
+    /**
+     * @Route("catalogue/{categories}/{produits}", name="categories")
      */
+    // liste toutes les categories
+    public function listProduitsParCategorie($categories, $produits)
+    {
+        $produits = $this->getDoctrine() // utilise doctrine
+                           ->getRepository(Produits::class) // lie à la bdd Categories dans le repository
+                           ->findBy(["produits" => $produits]);
+
+        $categories = $this->getDoctrine() // utilise doctrine
+                           ->getRepository(Categories::class) // lie à la bdd Categories dans le repository
+                           ->findBy(["categories" => $categories]);
+
+        // transforme $categories local en variable utilisable dans le fichier catalogue.html.twig
+        return $this->render("base/catalogue.html.twig", ["produits" => $produits, "categories" => $categories]);
+    }
+
+
+
+
+
+
+    /**
+     * @Route("/cataulogue/{name}", name="name")
+     */
+    // fonction d'affichage d'un seul produit
+ /*   function showProduct($name)
+    {
+        $produit = $this->getDoctrine()
+                        ->getRepository(Produits::class)
+                        ->findBy(["produit" => $name]);
+        return $this->render("base/catalogue.html.twig", ["produit" => $produit]);
+    }*/
+
+
+
+    
         // fonction d'affichage de tous les produits d'une même catégorie
         // https://zestedesavoir.com/tutoriels/620/developpez-votre-site-web-avec-le-framework-symfony2/395_gerer-la-base-de-donnees-avec-doctrine2/1999_recuperer-ses-entites-avec-doctrine2/
-    function showListProducts($categorie)
+    /*function showListProducts($categorie)
     {
         $produit = $this->getDoctrine()
                         ->getRepository(Produits::class)
                         ->findBy(array("produit" => $categorie));
         return $this->render("base/list.html.twig", ["produit" => $produit]);
     }
-
+*/
 
 
 }

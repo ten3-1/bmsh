@@ -13,8 +13,8 @@ class ProduitsRepository extends ServiceEntityRepository
         parent::__construct($registry, Produits::class);
     }
 
-    /*
-    public function findBySomething($value)
+    
+    /*public function findBySomething($value)
     {
         return $this->createQueryBuilder('p')
             ->where('p.something = :value')->setParameter('value', $value)
@@ -23,6 +23,7 @@ class ProduitsRepository extends ServiceEntityRepository
             ->getQuery()
             ->getResult()
         ;
-    }
-    */
+    }*/
+
+    
 }

@@ -8,13 +8,22 @@
     <section class="contenu-catalogue">
         <nav class="nav-catalogue">
             <ul>
-                {% for c in categories %}
-                <li><a href="" alt="{{ c.cat }}" >{{ c.cat }}</a></li>
+              {% for c in categories %}
+                    <li><a href="" alt="{{ c.cat }}" >{{ c.cat }}</a></li>
+                {% endfor %}
+        
+            </ul>
+
+{#             <ul>
+                {% for p in produits %}
+                    <li>{{ p.id }} : {{ p.produit }}</li>
                 {% endfor %}
             </ul>
+#}
         </nav>
-        </section>
+
     </section>
+</section>
 
 
 
