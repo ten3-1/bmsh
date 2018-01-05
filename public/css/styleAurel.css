@@ -13,6 +13,7 @@ body {
 	font-family: 'Barlow Condensed', sans-serif;
 	margin: 10px;
 	color: #5F677D;
+	list-style-type: none;
 }
 
 /* polices que j'aime bien pour les h2 et sous-titres : Google fonts:
@@ -123,7 +124,6 @@ header {
 
 .nav-principal li {
 	margin: 10px 0;
-	list-style-type: none;
 }
 
 .nav-principal a {
@@ -203,7 +203,6 @@ header {
 }
 .catalogue ul {
 	width: 80%;
-	list-style-type: none;
 	padding-left: 0;
 	display: flex;
 	flex-direction: row;
@@ -414,7 +413,6 @@ form button:hover {
 
 .contenu-catalogue ul {
 	font-size: 1.2em;
-	list-style-type: none;
 }
 
 .contenu-catalogue li {
@@ -633,7 +631,6 @@ figure.effect-winston{
 	width: 70%;
 	display: flex;
 	flex-direction: column;
-	list-style-type: none;
 	padding-left: 10px;
 }
 

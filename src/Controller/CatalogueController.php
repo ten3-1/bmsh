@@ -57,6 +57,9 @@ class CatalogueController extends Controller{
                       ->find($id);
         //
     }
+    /**
+     * @Route("catalogue", name="catalogue")
+     */
     // liste toutes les categories
     public function listCat(){
         $categories = $this->getDoctrine() // utilise doctrine

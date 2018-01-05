@@ -8,30 +8,18 @@
     <section class="contenu-catalogue">
         <nav class="nav-catalogue">
             <ul>
-                <li><a href="#">Pains</a></li>
-                <li><a href="#">Foccacia</a></li>
-                <li><a href="#">Viennoiseries</a></li>
-                <li><a href="#">Bloomers</a></li>
-                <li><a href="#">Gâteaux</a></li>
-                <li><a href="#">Biscuits</a></li>
-                <li><a href="#">Créations saisonnières</a></li>
-                <li><a href="#">Et autres...</a></li>
-            </ul>
-        </nav>
-
-        
-            <ul>
                 {% for c in categories %}
                 <li><a href="" alt="{{ c.cat }}" >{{ c.cat }}</a></li>
                 {% endfor %}
             </ul>
+        </nav>
         </section>
     </section>
 
 <!--
             <section class="produits">
                 <div class="grid"> -->
-                    
+
     <!-- PHP
 
                 $requeteSQL = "SELECT * FROM produits WHERE categorie = '1' ORDER BY produit CODESQL";
@@ -54,8 +42,6 @@
             </figcaption>
         </figure>
     CODEHTML;
-                }
-
 
                     </div> -->
 
