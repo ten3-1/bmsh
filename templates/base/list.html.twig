@@ -2,8 +2,8 @@
 {% block body %}
 
 <ul>
-    {% for p in categories %}
-      <li>{{ p.cat }}</li>
+	{% for p in produit %}
+      <li>{{ p.id }} : {{ p.produit }}</li>
     {% endfor %}
 </ul>
 
