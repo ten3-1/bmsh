@@ -321,41 +321,6 @@ box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.75);
   z-index:5;
 }
 
-.support {
-  margin:auto;
-  top:-260px; right:0; bottom:0; left:0;
-  box-shadow: 0 5px 5px rgba(0,0,0,0.4), 0 -1px 2px rgba(0,0,0,0.3);
-}
-
-.support::before {
-  content:'';
-  width:4px;
-  height:100px;
-  background:#fff;
-  position:absolute;
-  z-index:-1;
-  transform:rotate(38deg);
-  transform-origin:50% 0%;
-  top:5px;
-  left:3px;
-  background: linear-gradient(left, #f3f3f3, #fff);
-  box-shadow: 4px 3px 3px rgba(0,0,0,0.2), inset 1px 0 4px rgba(0,0,0,0.2);
-}
-
-.support::after {
-  content:'';
-  width:4px;
-  height:100px;
-  background:#fff;
-  position:absolute;
-  z-index:-1;
-  transform:rotate(-38deg);
-  transform-origin:50% 0%;
-  top:5px;
-  left:1px;
-  background: linear-gradient(left, #f3f3f3, #fff);
-  box-shadow: -2px 3px 3px rgba(0,0,0,0.2), inset 1px 0 4px rgba(0,0,0,0.2);
-}
 
 [class*="hand-"] {
   border-radius: 100% 100% 5px 5px;
@@ -496,4 +461,42 @@ h2{
 
 #right{
   transform: rotate(-4deg);
+}
+
+
+.textnav{
+  color: white;
+  font-size: 60px;
+}
+
+
+
+#prodtext{
+  z-index:9;
+  opacity:0;
+}
+
+#pierretext{
+  z-index:9;
+  opacity:0;
+}
+
+#philostext{
+  z-index:9;
+ opacity:0;
+}
+
+#contacttext{
+  z-index:9;
+  opacity:0;
+}
+
+#boutitext{
+  z-index:9;
+  opacity:0;
+}
+
+#actutext{
+  z-index:9;
+  opacity:0;
 }

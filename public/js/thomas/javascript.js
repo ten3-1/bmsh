@@ -19,7 +19,8 @@ $(function(){
        $("#pierre").mouseleave(function(){
         $("#ensemble").animate({
             opacity: 1
-        },0, function() {
+        },0, 
+        function() {
             // Callback
             $("#light1").animate({
                     opacity: 0
@@ -118,35 +119,79 @@ $(function(){
 
   $("#pierre").mouseenter(function(){
       $("#pierrephoto").addClass("wobble")
+      $("#pierretext").animate({
+            opacity: 1
+      });
   });
+
+      
    $("#pierre").mouseleave(function(){
       $("#pierrephoto").removeClass("wobble")
+      $("#pierretext").animate({
+            opacity:0
+      });        
   });
 
   $("#contact").mouseenter(function(){
       $("#telephone").addClass("phonecall")
+      $("#contacttext").animate({
+            opacity:1
+      }); 
   });
    $("#contact").mouseleave(function(){
       $("#telephone").removeClass("phonecall")
+      $("#contacttext").animate({
+            opacity:0
+      });  
   });
 
   $("#catalogue").mouseenter(function(){
       $("#label").addClass("wobble")
+       $("#prodtext").animate({
+            opacity:1
+      }); 
   });
    $("#catalogue").mouseleave(function(){
       $("#label").removeClass("wobble")
+       $("#prodtext").animate({
+            opacity:0
+      });  
   });
    $("#kid").mouseenter(function(){
       $("#boy").addClass("wobble")
+      $("#philostext").animate({
+            opacity:1
+      }); 
   });
    $("#kid").mouseleave(function(){
       $("#boy").removeClass("wobble")
+      $("#philostext").animate({
+            opacity:0
+      });  
   });
      $("#histoire").mouseenter(function(){
       $("#old").addClass("wobble")
+      $("#boutitext").animate({
+            opacity:1
+      }); 
   });
    $("#histoire").mouseleave(function(){
       $("#old").removeClass("wobble")
+      $("#boutitext").animate({
+            opacity:0
+      });  
+  });
+    $("#actu").mouseenter(function(){
+      $(".clock").addClass("wobble")
+      $("#actutext").animate({
+            opacity:1
+      }); 
+  });
+   $("#actu").mouseleave(function(){
+      $(".clock").removeClass("wobble")
+      $("#actutext").animate({
+            opacity:0
+      });  
   });
 
 
@@ -232,4 +277,3 @@ var oClockAnalog = {
         // }
     }
 };
-ClockInit();
