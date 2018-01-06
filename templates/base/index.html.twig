@@ -1,12 +1,14 @@
 {% extends 'base.html.twig' %}
 {% block stylesheets %}
 <link href="{{ asset('css/intro.css') }}" rel="stylesheet">
+<link href="{{ asset('css/styleThomas.css') }}" rel="stylesheet">
 {% endblock %}
 
 {% block title %}Boulangerie Maison Saint-Honoré{% endblock %}
 
 {% block body %}
-<section>
+<!-- LANDING PAGE -->
+<section id="animation">
     <div class="mshnb"></div>
     <div class="boutique"></div>
     <div class="mains"></div>
@@ -16,9 +18,99 @@
         <p class="ko">Votre navigateur ne supporte pas les vidéos HTML5 au format WebM avec VP8 ni au format MP4, veuillez mettre à jour votre navigateur ou télécharger Chrome ou Firefox<p>
     </video>
 </section>
-<a href="./accueil">accueil</a>
+
+
+<!-- PAGE ACCUEIL -->
+<main id="content">
+    <div class="container" id="parent">
+        <img src="{{ asset('./img/accueil/empty.png') }}" id="flou" class ="sandwich" usemap="#map"/>
+            <map name="map">
+                <!-- #$-:Image map file created by GIMP Image Map plug-in -->
+                <!-- #$-:GIMP Image Map plug-in by Maurits Rijk -->
+                <!-- #$-:Please do not edit lines starting with "#$" -->
+                <!-- #$VERSION:2.3 -->
+                <!-- #$AUTHOR:Etudiant -->
+                <area shape="rect" id="pierre" coords="76,318,549,731" target="pierre" data-fancybox data-src="#pierrestory" href="./pierre-ragot"/>
+                <area shape="rect" id="histoire" coords="991,111,1369,702" target="histoire" href="#"/>
+                <area shape="rect" id="kid" coords="556,104,977,638" target="cut" href="./savoir-faire" />
+                <area shape="rect" id="contact" coords="1379,122,1798,813" target="telephone" href="./adresses" />
+                <area shape="rect" id="catalogue" coords="95,736,1373,1214" target="catalogue" href="./catalogue" />
+                <area shape="rect" id="actu" coords="0,15,540,315" target="actualité" href="./actu" />
+            </map>
+            
+            <!-- Text foor the navigation -->
+            <img class ="sandwich" id="actutext" src="{{ asset('./img/accueil/actu.png') }}">
+            <img class ="sandwich" id="boutitext" src="{{ asset('./img/accueil/boutiquez.png') }}">
+            <img class ="sandwich" id="contacttext" src="{{ asset('./img/accueil/contactez.png') }}">
+            <img class ="sandwich" id="philostext" src="{{ asset('./img/accueil/savoirfaire.png') }}">
+            <img class ="sandwich" id="pierretext" src="{{ asset('./img/accueil/pierreragot.png') }}">
+            <img class ="sandwich" id="prodtext" src="{{ asset('./img/accueil/produits.png') }}">
+            <!-- end of text for navigation -->
+            <!--clock-->
+                <div class="clock">
+                    <div class="numbers">
+                        <ul>
+                            <li>12</li>
+                            <li>3</li>
+                            <li>6</li>
+                            <li>9</li>
+                        </ul>
+                        </div>
+                    <div class="clockwise">
+                        <div class="center"></div>
+                        <div class="hand-minute" id="analogminute"></div>
+                        <div class="hand-hour" id="analoghour"></div>
+                    </div>
+                </div>
+        <!-- photos dans les cadres -->
+        <img class ="sandwich" id="back" src="{{ asset('./img/accueil/background2.PNG') }}">
+        <img class ="sandwich" id="light1" src="{{ asset('./img/accueil/lamp1.png') }}">
+        <img class ="sandwich" id="light2" src="{{ asset('./img/accueil/lamp2.png') }}">
+        <img class ="sandwich" id="light3" src="{{ asset('./img/accueil/lamp3.png') }}">
+        <img class ="sandwich" id="light4" src="{{ asset('./img/accueil/lamp4.png') }}">
+        <img class ="sandwich" id="label" src="{{ asset('./img/accueil/catalogue.png') }}">
+        <img class ="sandwich" id="boy" src="{{ asset('./img/accueil/philosoph.png') }}">
+        <img class ="sandwich" id="old" src="{{ asset('./img/accueil/boutiques.png') }}">
+        <img class ="sandwich" id="pierrephoto" src="{{ asset('./img/accueil/pierre.png') }}">
+        <img class ="sandwich" id="telephone" src="{{ asset('./img/accueil/telephone.png') }}">
+        <img class ="sandwich" id="ensemble" src="{{ asset('./img/accueil/breadandlights.png') }}">
+        </div>
+    <div class ="sidebar">
+        <div class="logo">
+            <a href="#">
+            <div class="incline">
+                <p>maison</p>
+                <p>saint honoré</p>
+            </div>
+            <p class="logo-pierre">par Pierre ragot</p>
+        </div>
+    </div>
+
+        <!--inline content pierre -->
+    <div style="display: none;" id="pierrestory">
+        <h2>PIERRE RAGOT</h2>
+        <p>Parisien d'origine, Pierre Ragot, a ...</p>
+        <section class="top">
+            <div class="poloroid">
+                <img id="left" src="{{ asset('./img/accueil/pierre1.JPG' )}}">
+            </div>
+            <p>Il fonde la Maison Saint-Honoré à Marseille en 2011 dans le quartier d'Endoume.<br> La passion du métier alliée à des matières premières de premier choix, la boulangerie s'est fait un nom auprès des marseillais, particuliers et professionnels de la restauration.</p>
+        </section>
+
+        <section>
+            <p>Découvrez tout notre savoir-faire et la philosophie de notre maison ...</p>
+            <div class ="poloroid">
+                <img id="right" src="{{ asset('./img/accueil/pierre2.JPG' )}}">
+            </div>
+        </section>
+    </div>
+</main>
 {% endblock %}
 
 {% block javascripts %}
 <script src="{{ asset('js/intro.js') }}"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js"></script>
+<script src="{{ asset('js/thomas/javascript.js') }}"></script>
+<script src="{{ asset('js/thomas/jquery.fancybox.js') }}"></script>
 {% endblock %}

@@ -1,8 +1,33 @@
+<!-- PAGE D'ACCUEIL QUI POURRA ETRE SUPPRIMEE APRES LA FUSION REUSSIE AVEC L'INDEX -->
+
+
 {% extends 'base.html.twig' %}
 {% block stylesheets %}
 <link href="{{ asset('./css/styleThomas.css') }}" rel="stylesheet">
 {% endblock %}
+
 {% block body %}
+
+<!-- LANDING PAGE -->
+<section>
+    <div class="mshnb"></div>
+    <div class="boutique"></div>
+    <div class="mains"></div>
+    <video id="bg-video" autoplay>
+        <source src="{{ asset('videos/intro.webm') }}" type="video/webm">
+        <source src="{{ asset('videos/intro.mp4') }}" type="video/mp4">
+        <p class="ko">Votre navigateur ne supporte pas les vidéos HTML5 au format WebM avec VP8 ni au format MP4, veuillez mettre à jour votre navigateur ou télécharger Chrome ou Firefox<p>
+    </video>
+</section>
+<a href="./accueil">accueil</a>
+{% endblock %}
+
+
+
+
+
+
+
 <main>
     <div class="container" id="parent">
         <img src="{{ asset('./img/accueil/empty.png') }}" id="flou" class ="sandwich" usemap="#map"/>
@@ -88,6 +113,7 @@
     </div>
 </main>
 {% endblock %}
+
 {% block javascripts %}
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js"></script>

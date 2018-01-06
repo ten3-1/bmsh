@@ -13,12 +13,19 @@ $(document).ready(function() {
 });
 
 
+$.when( $.ready ).then(function() {
+  setTimeout(function() {
+    $('#animation').fadeOut(2000);
+    $('#content').fadeIn(2000);
+  }, 4000 /* milliseconds */)
+})
+
 // redirection
-const xhr = new XMLHttpRequest();
+/*const xhr = new XMLHttpRequest();
 xhr.open("GET", "./accueil", true);
 xhr.onload = function() {
     setInterval(function() {
     window.location = "./accueil"
     }, 20000)
 }
-xhr.send()
+xhr.send()*/
