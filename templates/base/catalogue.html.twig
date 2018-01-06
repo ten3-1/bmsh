@@ -9,20 +9,11 @@
         <nav class="nav-catalogue">
             <ul>
               {% for c in categories %}
-                    <li><a href="" alt="{{ c.cat }}" >{{ c.cat }}</a></li>
-                {% endfor %}
-        
-            </ul>
-
-{#             <ul>
-                {% for p in produits %}
-                    <li>{{ p.id }} : {{ p.produit }}</li>
+                    <li><a href="" alt="{{ c.cat }}" >{{ c.cat }}</a></li>  
                 {% endfor %}
             </ul>
-#}
         </nav>
-
-    </section>
+    </section>    
 </section>
 
 
@@ -31,28 +22,38 @@
             <section class="produits">
                 <div class="grid"> -->
 
-    <!-- PHP
 
-                $requeteSQL = "SELECT * FROM produits WHERE categorie = '1' ORDER BY produit CODESQL";
-                $afficherProduits = connexionBDD($requeteSQL, []);
-                foreach($afficherProduits as $element) {
-                    // debug
-                    /*echo "<pre>";
-                    print_r($element);
-                    echo "</pre>";*/
-                    $element = array_map("htmlentities", $element);
-                    extract($element);
-                    // $description = mb_strimwidth($description, 0, 50, '... ').'<a href="template-produit.php?idproduit=' . $idproduit . '"></a>';
-                    echo -->
-    <!-- <<<CODEHTML
-        <figure class="effect-winston">
-            <img src="$photo" alt="">
+    
+{#         <figure class="effect-winston">
+            {% for p in produits %}
+            <img src="{{ p.photo }}" alt="">
             <figcaption>
-                <h2>$produit</h2>
-                <p>Liste allergènes</p>
+                <h2>{{ p.produit }}</h2>
+                <p>         
+                    <a href="#">
+                        <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                    </a>
+                </p>
             </figcaption>
-        </figure>
-    CODEHTML;
+            {% endfor %}
+        </figure> #}
+
+
+    <!-- PHP
+        foreach($afficherProduits as $element) {
+            $element = array_map("htmlentities", $element);
+            extract($element);
+            // $description = mb_strimwidth($description, 0, 50, '... ').'<a href="template-produit.php?idproduit=' . $idproduit . '"></a>';
+            echo -->
+<!-- <<<CODEHTML
+    <figure class="effect-winston">
+        <img src="$photo" alt="">
+        <figcaption>
+            <h2>$produit</h2>
+            <p>Liste allergènes</p>
+        </figcaption>
+    </figure>
+CODEHTML;
 
                     </div> -->
 
