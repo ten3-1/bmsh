@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{% block title %}Maison Saint-Honoré{% endblock %}</title>
+    {% block stylesheets %}
     <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css"/>
-    {% block stylesheets %}
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     {% endblock %}
     </head>
@@ -15,7 +15,26 @@
         <header></header>
         {% block body %}{% endblock %}
         {% block footer %}
-            Maison Saint-Honoré &copy; 2011-{{ "now"|date("Y")}}
+            <!--Nav Footer-->
+            <div id="navFooter">
+                <ul>
+                    <li><a href=".">ACCUEIL</a></li>
+                    <li><a href="./actualite">ACTUALITÉ</a></li>
+                    <li><a href="./pierre">PIERRE RAGOT</a></li>
+                    <li><a href="./savoirfaire">SAVOIR FAIRE</a></li>
+                    <li><a href="./catalogue">CATALOGUE</a></li>
+                    <li><a href="./boutiques">NOS BOUTIQUES</a></li>
+                    <li><a href="./contact">CONTACT</a></li>
+                    <!--réseaux sociaux icons-->
+                    <li><a href="https://www.facebook.com/maisonsthonorepierreragot/" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
+                    <li><a href="https://www.instagram.com/maisonsainthonoremarseille/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                    <!--End réseaux sociaux-->
+                </ul>
+            </div>
+            <!--End Nav Footer--> 
+            <!--Credits-->
+            <p id="credits">Création De Site Web par Peter Wong, Aurélie Favre-Brun et Thomas Baseley 2018</p>
+            <!--End Credits-->
         {% endblock %}
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
         {% block javascripts %}
