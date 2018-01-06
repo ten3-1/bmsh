@@ -9,7 +9,8 @@ $(document).ready(function() {
     $(".mshnb").delay( 1500 ).fadeOut( 800 );
     $(".boutique").delay( 2100 ).fadeOut( 900 );
     $(".mains").delay( 3500 ).fadeOut( 2500 );
-    $("video").delay( 2800 ) .fadeOut( 800 ); 
+    $("video").delay( 2800 ) .fadeOut( 800 );
+    $("footer").hide();
 });
 
 
@@ -17,6 +18,7 @@ $.when( $.ready ).then(function() {
   setTimeout(function() {
     $('#animation').fadeOut(2000);
     $('#content').fadeIn(2000);
+    $("footer").show();
   }, 4000 /* milliseconds */)
 })
 

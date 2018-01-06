@@ -505,7 +505,7 @@ h2{
 }
 
 
-#navFooter{
+footer{
   margin-top: 400px;
 	text-decoration: none;
 	font-family: 'Barlow Condensed', sans-serif;
@@ -514,7 +514,7 @@ h2{
 }
 
 
-#navFooter li {
+footer li {
   list-style:none;
   display:inline-block;
   margin-right: 50px;
@@ -523,7 +523,7 @@ h2{
   
 }
 
-#navFooter li:hover {
+footer li:hover {
 	color: #F26D31;
 	border-top: 3px solid #F26D31;
 	border-bottom: 3px solid #F26D31;
