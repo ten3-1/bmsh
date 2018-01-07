@@ -1,0 +1,31 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* Gestion du Responsive Design */
+
+@viewport { 
+    width: device-width; 
+    zoom: 1; 
+}
+
+
+
+@media screen and (max-width: 1280px)
+{
+    /* Rédigez vos propriétés CSS ici */
+}
+
+
+@media screen and (max-width: 900px)
+{
+    #content, #animation {
+    	border: 1px red solid;
+    	height: 100vw;
+    }
+}
+

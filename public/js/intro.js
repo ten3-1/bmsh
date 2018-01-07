@@ -14,20 +14,13 @@ $(document).ready(function() {
 });
 
 
-$.when( $.ready ).then(function() {
-  setTimeout(function() {
-    $('#animation').fadeOut(2000);
-    $('#content').fadeIn(2000);
-    $("footer").show();
-  }, 4000 /* milliseconds */)
-})
+// if (window.location.pathname === '' || window.location.pathname === '/') {
+    $.when( $.ready ).then(function() {
+      setTimeout(function() {
+        $('#animation').fadeOut(2000);
+        $('#content').fadeIn(2000);
+        $("footer").show();
+      }, 4000 /* milliseconds */)
+    })
+// }
 
-// redirection
-/*const xhr = new XMLHttpRequest();
-xhr.open("GET", "./accueil", true);
-xhr.onload = function() {
-    setInterval(function() {
-    window.location = "./accueil"
-    }, 20000)
-}
-xhr.send()*/

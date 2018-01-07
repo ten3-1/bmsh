@@ -1,15 +1,37 @@
-body {
-    background-color: grey;
-
+html {
+  box-sizing: border-box;
 }
 
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+    background-color: black;
+}
+
+
+/* gestion de l'animation à l'arrivée sur le site */
 #animation {
   position: absolute;
 }
 
 #content {
-  display: none;
-      overflow: hidden;
+    display: none;
+    overflow: hidden;
+}
+/* gestion de l'animation à l'arrivée sur le site */
+
+
+#animation img {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    width: 310px;
+    position: relative;
+    top: 200px;
+    border-collapse: collapse;
 }
 
 .mshnb,.boutique, video, .mains{

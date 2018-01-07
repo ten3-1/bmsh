@@ -2,21 +2,30 @@
 {% block stylesheets %}
 <link href="{{ asset('css/intro.css') }}" rel="stylesheet">
 <link href="{{ asset('css/styleThomas.css') }}" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="{{ asset('css/responsive.css') }}">
 {% endblock %}
 
 {% block title %}Boulangerie Maison Saint-Honoré{% endblock %}
 
 {% block body %}
 <!-- LANDING PAGE -->
-<section id="animation">
+<!-- <section id="animation">
     <div class="mshnb"></div>
     <div class="boutique"></div>
     <div class="mains"></div>
     <video id="bg-video" autoplay>
-        <source src="{{ asset('videos/intro.webm') }}" type="video/webm">
-        <source src="{{ asset('videos/intro.mp4') }}" type="video/mp4">
+{#         <source src="{{ asset('videos/intro.webm') }}" type="video/webm">
+        <source src="{{ asset('videos/intro.mp4') }}" type="video/mp4"> #}
         <p class="ko">Votre navigateur ne supporte pas les vidéos HTML5 au format WebM avec VP8 ni au format MP4, veuillez mettre à jour votre navigateur ou télécharger Chrome ou Firefox<p>
     </video>
+</section> -->
+
+<section id="animation">
+	<img src="{{ asset('./img/landing-page/vitrine.jpg') }}" alt="Maison Saint-Honoré vitrine boutique Endoume Marseille">
+	<img src="{{ asset('./img/landing-page/pierre.jpg') }}" alt="Pierre Ragot boulanger Maison Saint-Honoré">
+	<img src="{{ asset('./img/landing-page/mains.jpg') }}" alt="Maison Saint-Honoré pétrissage">
+	<img src="{{ asset('./img/landing-page/boutique.jpg') }}" alt="Maison Saint-Honoré intérieur boutique Endoume Marseille">
+	<img src="{{ asset('./img/landing-page/produits.jpg') }}" alt="Maison Saint-Honoré produits">
 </section>
 
 
