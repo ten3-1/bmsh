@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+{{ form_start(form) }}
+
+{{ form_row(form.nom_boutique) }}
+{{ form_row(form.adress_boutique) }}
+{{ form_row(form.horaires) }}
+{{ form_row(form.telephone) }}
+
+{{ form_end(form) }}
+
+{% endblock %}

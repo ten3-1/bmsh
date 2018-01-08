@@ -41,7 +41,7 @@ class Boutiques
     {
         return $this->nomBoutique;
     }
-    public function setNomBoutique($email)
+    public function setNomBoutique($nomBoutique)
     {
         return $this->nomBoutique = $nomBoutique;
     }

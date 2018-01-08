@@ -1,16 +1,15 @@
 <?php
 
 // Controller Ajouter / Modifier Boutiques
-namespace App\Controller;
 
+namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\EntityRepository;
-use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 use App\Entity\Boutiques;
-
+use App\Form\BoutiquesType;
 use ORM\EntityManager;
 
 
@@ -18,28 +17,20 @@ class BoutiqueController extends Controller{
     /**
      * @Route("/admin/ajouter-boutique", name="ajouter-boutique")
      */
-    function ajouterBoutique($obj){
-        $nomBoutique    = $obj->getNomBoutique();
-        $adressBoutique = $obj->getAdressBoutique();
-        $horaires       = $obj->getHoraires();
-        $telephone      = $obj->getTelephone();
-
-        // IF FORM IS VALID
-        if($form->isSubmitted() && $form->isValid())
-        {
+    function ajouterBoutique(Request $request){
+        // Creation du formulaire
+        $boutiques = new Boutiques();
+        $form = $this->createForm(BoutiquesType::class, $boutiques)
+                     ->handleRequest($request); 
+        // PHP  if (isset($_REQUEST["submit"]) && ($_REQUEST["valid"] == "submit"))
+        if($form->isSubmitted() && $form->isValid()){
+            // sauve dans la BDD
             $em = $this->getDoctrine()->getManager();
-            $boutique = new Boutiques();
-            $boutique ->setNomBoutique($nomBoutique)
-                      ->setAdressBoutique($adressBoutique)
-                      ->setHoraires($horaires)
-                      ->setTelephone($telephone);
-            // GET READY!!!
-            $em->persist($boutique);
-            // GO!!!!!!
+            $em->persist($boutiques);
             $em->flush();
+            // $this->addFlash("success","yay §§§");
         }
-        return new Response("<strong>$boutique a été ajouté dans la base de donnée et le site web</strong>");
-    
+        return $this->render("base/boutique.html.twig", ["form" => $form->createView()]);
     }
 }
     /*

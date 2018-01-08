@@ -1,5 +1,15 @@
 {% extends 'admin.html.twig' %}
 
+{% block title %}Ajouter une nouvelle boutique{% endblock %}
+
+{% block body %}
+Formulaire
+{% endblock %}
+
+
+<!--
+
+
 <form method="POST">
         <fieldset>
             <legend><strong>Ajouter une nouvelle boutique</strong></legend>
@@ -20,13 +30,18 @@
 <?php
 if (isset($_REQUEST["submit"]) && ($_REQUEST["submit"] == "submit"))
 {
-    $nomBoutique = $_POST["nomBoutique"];
-    $adressBoutique = $_POST["adressBoutique"];
+    $nomBoutique = $_POST["nom_Boutique"];
+    $adressBoutique = $_POST["adress_Boutique"];
     $horaires = $_POST["horaires"];
-    $adressBoutique = $_POST["adressBoutique"];
     $telephone = $_POST["telephone"];
     foreach ($boutiques as $boutique){
-        /////+// a finir....
+       $sql = $db->prepare("INSERT INTO boutiques (nom_boutique, adress_boutique, horaires, telephone ) VALUES (:nom_boutique, :adress_Boutique, :horaires, :telephone,)");
+        $sql->execute([":nom_boutique" => htmlentities($nom_boutique),
+                        ":adress_boutique" => htmlentities($adress_boutique),
+                        ":horaires" => htmlentities($horaires),
+                        ":telephone" => htmlentities($telephone)
+        
+        ]);
     }
     
 }
@@ -34,3 +49,4 @@ if (isset($_REQUEST["submit"]) && ($_REQUEST["submit"] == "submit"))
             
         </fieldset>
 </form>        
+-->
