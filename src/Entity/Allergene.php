@@ -5,9 +5,9 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\AllergenesRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\AllergeneRepository")
  */
-class Allergenes
+class Allergene
 {
     /**
      * @ORM\Id
@@ -21,7 +21,7 @@ class Allergenes
     /**
      * @ORM\Column(type="string", length=128)
      */
-    private $allergene;
+    private $nomAllergene;
 
     /**
      * @ORM\Column(type="string", length=256)
@@ -55,9 +55,9 @@ class Allergenes
     {
         return $this->id = $id;
     }
-    public function setAllergene($allergene)
+    public function setnomAlergene($nomAllergene)
     {
-        return $this->allergene = $allergene;
+        return $this->nomAllergene = $nomAllergene;
     }
     public function setDescription($description)
     {

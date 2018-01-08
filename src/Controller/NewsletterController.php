@@ -22,9 +22,9 @@ class NewsletterController extends Controller{
         // PHP  if (isset($_REQUEST["submit"]) && ($_REQUEST["valid"] == "submit"))
         if($form->isSubmitted() && $form->isValid()){
             // sauve dans la BDD
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($newsletter);
-            $em->flush();
+            $this->getDoctrine()->getManager()
+                 ->persist($newsletter)
+                 ->flush();
             // $this->addFlash("success","yay §§§");
         }
         return $this->render("base/newsletter.html.twig", ["form" => $form->createView()]);

@@ -8,14 +8,15 @@ use Doctrine\DBAL\Schema\Schema;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-class Version20180107221655 extends AbstractMigration
+class Version20180108144320 extends AbstractMigration
 {
     public function up(Schema $schema)
     {
         // this up() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE boutiques ADD nom_boutique VARCHAR(150) NOT NULL, ADD adress_boutique VARCHAR(500) NOT NULL, ADD horaires VARCHAR(300) NOT NULL, ADD telephone INT NOT NULL');
+        $this->addSql('CREATE TABLE allergene (id INT AUTO_INCREMENT NOT NULL, nom_allergene VARCHAR(128) NOT NULL, description VARCHAR(256) NOT NULL, icone VARCHAR(64) NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB');
+        $this->addSql('DROP TABLE allergenes');
     }
 
     public function down(Schema $schema)
@@ -23,6 +24,7 @@ class Version20180107221655 extends AbstractMigration
         // this down() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE boutiques DROP nom_boutique, DROP adress_boutique, DROP horaires, DROP telephone');
+        $this->addSql('CREATE TABLE allergenes (id INT AUTO_INCREMENT NOT NULL, allergene VARCHAR(128) NOT NULL COLLATE utf8_unicode_ci, description VARCHAR(256) NOT NULL COLLATE utf8_unicode_ci, icone VARCHAR(64) NOT NULL COLLATE utf8_unicode_ci, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB');
+        $this->addSql('DROP TABLE allergene');
     }
 }

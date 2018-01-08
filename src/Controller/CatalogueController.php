@@ -8,8 +8,8 @@ use Doctrine\ORM\EntityRepository;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
-use App\Entity\Produits;
-use App\Entity\Categories;
+use App\Entity\Produit;
+use App\Entity\Categorie;
 
 use Doctrine\DBAL\Driver\Connection;
 
@@ -62,7 +62,7 @@ class CatalogueController extends Controller
     public function updateProduct($id)
     {
         $em = $this->getDoctrine()->getManager();
-        $product = $em->getRepository(Produits::class)
+        $product = $em->getRepository(Produit::class)
                       ->find($id);
         //
     }
@@ -76,53 +76,43 @@ class CatalogueController extends Controller
     // liste toutes les categories
    public function listCatalogue()
     {
-        $categories = $this->getDoctrine() // utilise doctrine
-                           ->getRepository(Categories::class) // lie à la bdd Categories dans le repository
+        $categorie = $this->getDoctrine() // utilise doctrine
+                           ->getRepository(Categorie::class) // lie à la bdd Categories dans le repository
                            ->findAll(); // affiche tout
         // transforme $categories local en variable utilisable dans le fichier catalogue.html.twig
-        return $this->render("base/catalogue.html.twig", ["categories" => $categories]);
+        return $this->render("base/catalogue.html.twig", ["categorie" => $categorie]);
     }
-
-
-
 
     /**
-     * @Route("catalogue/{categories}", name="categorie")
+     * @Route("catalogue/{id}", name="id categproe")
      */
-    // liste toutes les categories
-   public function listCategories($categories)
+    // liste tous les produits dans une categorie
+    public function listEachProductFromCat($id)
     {
-        $categories = $this->getDoctrine() // utilise doctrine
-                           ->getRepository(Categories::class) // lie à la bdd Categories dans le repository
-                           ->findBy(["cat" => $categories]);
-        // transforme $categories local en variable utilisable dans le fichier catalogue.html.twig
-        return $this->render("base/catalogue.html.twig", ["categories" => $categories]);
-    }
-
-
-
-
-
-
-
-
-
-
+     $em = $this->getDoctrine()->getManager();
+     // récupère l'îd de la categorie
+     $categorie = $em->getRepository(Categorie::class)
+                     ->findOneBy(["id" => $id]);
+     // récupère la liste des produits de cette categorie
+     $listProduits = $em->getRepository(Produit::class)
+                        ->findBy(["categorie" => $categorie]);
+     return $this->render("base/manytoone.html.twig", ["categorie" => $categorie, "listProduits" => $listProduits]);
+   }
 
 // ------------------ TEST affichage tous produits par catégorie
 // ------------------- PLANTAGE de la page !!!!
     /**
-     * @Route("catalogue/{categories}/{produits}", name="produits")
+     * @Route("catalogue/{categories}/{produits}", name="produit")
      */
     // liste toutes les categories
     public function listProduitsParCategorie($produits, $categories)
     {
         $objetProduits = $this->getDoctrine() // utilise doctrine
-                         ->getRepository(Produits::class); // lie à la bdd Categories dans le repository
+                         ->getRepository(Produit::class); // lie à la bdd Categories dans le repository
                          // ->findAll();
 
         $objetCategories = $this->getDoctrine() // utilise doctrine
-                           ->getRepository(Categories::class); // lie à la bdd Categories dans le repository
+                           ->getRepository(Categorie::class); // lie à la bdd Categories dans le repository
                            // ->findBy(["cat" => $categories]);
 
         $tabResultat = $objetProduits->findBy([]);
@@ -140,11 +130,11 @@ class CatalogueController extends Controller
 
 
         // transforme $categories local en variable utilisable dans le fichier catalogue.html.twig
-        // return $this->render("base/catalogue.html.twig", 
+        // return $this->render("base/catalogue.html.twig",
         //     ["produits" => $produits]);
-        return $this->render("base/catalogue.html.twig", 
+        return $this->render("base/catalogue.html.twig",
             ["produit" => $categories ]);
- 
+
     }
 
 

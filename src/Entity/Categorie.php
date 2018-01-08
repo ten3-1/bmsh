@@ -3,11 +3,13 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\CategoriesRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\CategorieRepository")
  */
-class Categories
+class Categorie
 {
     /**
      * @ORM\Id
@@ -20,23 +22,24 @@ class Categories
     /**
      * @ORM\Column(type="string", length=128)
      */
-    private $cat;
+    private $nomCategorie;
 
     // Getters & Setters
     public function getId()
     {
         return $this->id;
     }
-    public function getCat()
+    public function getNomCategorie()
     {
-        return $this->cat;
+        return $this->nomCategorie;
     }
     public function setId($id)
     {
         return $this->id = $id;
     }
-    public function setCat($cat)
+    public function setNomCategorie($nomCategorie)
     {
-        return $this->cat = $cat;
+        return $this->nomCategorie = $nomCategorie;
     }
+
 }

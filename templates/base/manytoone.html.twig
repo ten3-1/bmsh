@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Catalogue{% endblock %}
+
+{% block body %}
+    <h2>Catalogue</h2>
+    <h3>Many Produts to One Catalogue</h3>
+
+{% for p in listProduits %}
+<li><a href="" alt="{{ p.nomProduit }}" ></a>{{ p.nomProduit }}</a></li>
+{% endfor %}
+
+{% endblock %}
