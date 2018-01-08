@@ -1,7 +1,6 @@
 <?php
 
-// Controller Ajouter / Modifier Boutique
-
+// Controller concernant la Boutique
 namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Doctrine\ORM\EntityRepository;
@@ -11,8 +10,6 @@ use Symfony\Component\HttpFoundation\Request;
 use App\Entity\Boutique;
 use App\Form\BoutiqueType;
 use ORM\EntityManager;
-
-
 class BoutiqueController extends Controller{
     /**
      * @Route("/admin/ajouter-boutique", name="ajouter-boutique")
