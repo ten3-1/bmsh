@@ -4,8 +4,12 @@ namespace App\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use App\Entity\Categorie;
+use App\Entity\Allergene;
 
 class ProduitType extends AbstractType{
     public function buildForm(FormBuilderInterface $builder, array $option){
@@ -13,14 +17,18 @@ class ProduitType extends AbstractType{
                     [   "label" => "Ajouter un nouveau produit",
                         "attr"  => ["placeholder" => "Email"] ])
                 ->add("description", TextareaType::class,
-                    [   "label" => "Ajouter un nouveau produit" ])
+                    [   "label" => "Description" ])
                 ->add("photo",TextType::class)
-                ->add("nom_categorie", EntityType::class,
+                ->add("categorie", EntityType::class,
                     [   "class"       => Categorie::class,
-                        "empty_value" => "Choisissez une catégorie"
+                    "choice_label" => "nom_categorie"
                     ])
-                ->add("allergene",CheckboxType::class,
-                [])
+                    ->add("allergene", EntityType::class,
+                    [   "class"       => Allergene::class,
+                    "choice_label" => "nom_allergene",
+                    "multiple" => true,
+                    "expanded" => true
+                    ])
                 ->add("Ajouter",SubmitType::class);
     }
 }

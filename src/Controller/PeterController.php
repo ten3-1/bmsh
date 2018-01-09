@@ -6,6 +6,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use App\Entity\Categorie;
 use App\Entity\Produit;
+use App\Form\ProduitType;
 
 class PeterController extends Controller{
     /**
@@ -38,38 +39,36 @@ class PeterController extends Controller{
     /**
       * @Route("/admin/add", name="add")
       */
-    function newProduit($nomProduit,$description,$photo,$nomCategorie,$nomAllergene, Request $request)
+    function newProduit(Request $request)
     {
 		// création de l'entité Produit
 		$produit = new Produit();
-		$produit->setNomProduit(["nom_produit" => $nomProduit])
-				->setDescription(["description" => $description])
-				->setPhoto(["photo" => $photo])
-				->setLabel(0)
-				->setActive(1);
+		// $produit->setNomProduit(["nom_produit" => $nomProduit])
+		// 		->setDescription(["description" => $description])
+		// 		->setPhoto(["photo" => $photo])
+		// 		->setLabel(0)
+		// 		->setActive(1);
 
 		// création de l'entité Categorie
-		$categorie = new Categorie();
-		$categorie->setNomCategorie(["nom_categorie" => $nomCategorie]);
-		// création de l'entité Allergene
-		$allergene = new Allergene();
-		$allergene->setNomAllergene(["nom_allergene" => $nomAllergene]);
+		// $categorie = new Categorie();
+		// $categorie->setNomCategorie(["nom_categorie" => $nomCategorie]);
+		// // création de l'entité Allergene
+		// $allergene = new Allergene();
+		// $allergene->setNomAllergene(["nom_allergene" => $nomAllergene]);
 
-		// relie le produit à la catégorie
-		$product->setCategorie($categorie);
-		// relie l'allergene au produit
-		$product->setAllergene($allergene);
+		// // relie le produit à la catégorie
+		// $product->setCategorie($categorie);
+		// // relie l'allergene au produit
+		// $product->setAllergene($allergene);
 
 		// création du formulaire
-		$form = $this->createForm(ProduitType::class, $product)
+		$form = $this->createForm(ProduitType::class, $produit)
 					 ->handleRequest($request);
 
 					 if($form->isSubmitted() && $form->isValid()){
 			// On récupère l'EntityManager
 			$this->getDoctrine()->getManager()
 					->persist($produit)
-					->persist($categorie)
-					->persist($allergene)
 					->flush();
 		}
 		return $this->render("admin/ajouter-produit.html.twig", ["produit" => $produit,"form" => $form->createView()]);

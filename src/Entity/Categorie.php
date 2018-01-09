@@ -11,6 +11,10 @@ use Doctrine\Common\Collections\Collection;
  */
 class Categorie
 {
+    public function __construct()
+    {
+        $this->groups = new ArrayCollection();
+    }
     /**
      * @ORM\Id
      * @ORM\GeneratedValue

@@ -1,9 +1,9 @@
 {% extends 'admin.html.twig' %}
 
+{% block body %}
 <!-- ceci marchait normalement avant mais ce n'est pas du twig -->
 <!-- cela devra ressembler à ceci à terme mais avec les images à resize-->
-
-<form method="POST">
+<!-- <form method="POST">
         <fieldset>
             <legend><strong>Ajouter un nouveau produit</strong></legend>
             <input type="text" name="produit" placeholder="Nouveau produit">
@@ -28,5 +28,9 @@
             <input type="file"><br />
             <button type="submit" name="submit" value="submit">Valider</button>
         </fieldset>
-    </form>
+    </form> -->
 
+    {{ form_start(form) }}
+
+    {{ form_end(form) }}
+{% endblock %}

@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ProduitRepository")
@@ -33,7 +35,12 @@ class Produit
      * @ORM\JoinColumn(nullable=true)
      */
     private $categorie;
-
+    /**
+     * @ORM\Column(type="integer")*
+     * @ORM\ManyToMany(targetEntity="App\Entity\Allergene")
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $allergene;
     /**
      * @ORM\Column(type="string", length=64)
      */
@@ -70,6 +77,10 @@ class Produit
     {
         return $this->categorie;
     }
+    public function getAllergene()
+    {
+        return $this->allergene;
+    }
     public function getPhoto()
     {
         return $this->photo;
@@ -102,6 +113,10 @@ class Produit
     public function setCategorie(Categorie $categorie)
     {
         return $this->categorie = $categorie;
+    }
+    public function setAllergene(Categorie $allergene)
+    {
+        return $this->allergene = $allergene;
     }
     public function setPhoto($photo)
     {

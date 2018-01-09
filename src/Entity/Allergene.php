@@ -3,12 +3,18 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\AllergeneRepository")
  */
 class Allergene
 {
+    public function __construct()
+    {
+        $this->groups = new ArrayCollection();
+    }
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -38,9 +44,9 @@ class Allergene
     {
         return $this->id;
     }
-    public function getAllergene()
+    public function getNomAllergene()
     {
-        return $this->allergene;
+        return $this->nomAllergene;
     }
     public function getDescription()
     {
@@ -55,7 +61,7 @@ class Allergene
     {
         return $this->id = $id;
     }
-    public function setnomAlergene($nomAllergene)
+    public function setNomAlergene($nomAllergene)
     {
         return $this->nomAllergene = $nomAllergene;
     }
