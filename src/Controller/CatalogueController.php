@@ -76,12 +76,21 @@ class CatalogueController extends Controller
     // liste toutes les categories
    public function listCatalogue()
     {
-        $categorie = $this->getDoctrine() // utilise doctrine
-                           ->getRepository(Categorie::class) // lie à la bdd Categories dans le repository
+      $em = $this->getDoctrine()->getManager();
+
+        $categorie = $em->getRepository(Categorie::class) // lie à la bdd Categories dans le repository
                            ->findAll(); // affiche tout
+
+    // récupère la liste des produits de cette categorie
+     $listProduits = $em->getRepository(Produit::class)
+                        ->findBy(["categorie" => $categorie]);
+
         // transforme $categories local en variable utilisable dans le fichier catalogue.html.twig
-        return $this->render("base/catalogue.html.twig", ["categorie" => $categorie]);
+        return $this->render("base/catalogue.html.twig", ["categorie" => $categorie, "listProduits" => $listProduits]);
     }
+
+
+
 
     /**
      * @Route("catalogue/{id}", name="id categproe")
@@ -98,6 +107,12 @@ class CatalogueController extends Controller
                         ->findBy(["categorie" => $categorie]);
      return $this->render("base/manytoone.html.twig", ["categorie" => $categorie, "listProduits" => $listProduits]);
    }
+
+
+
+
+
+
 
 // ------------------ TEST affichage tous produits par catégorie
 // ------------------- PLANTAGE de la page !!!!

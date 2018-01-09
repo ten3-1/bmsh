@@ -505,6 +505,17 @@ h2{
 }
 
 
+
+/* TEST ancres */
+.section-actus,
+.section-boutiques,
+.section-catalogue {
+  margin-top: 400px;
+}
+
+
+
+
 footer{
   margin-top: 400px;
 	text-decoration: none;

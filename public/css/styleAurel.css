@@ -701,24 +701,3 @@ footer p {
 	border: 1px solid red;
 }
 
-
-/* ------------------- PAGE Savoir-faire - lightbox/carousel ------------------- */
-.carousel {
-    width: 500px;
-    height: 500px;
-    margin: 0 auto;
-    background-color: rgba(0, 0, 0, 0.5);
-    text-align: center;
-    position: fixed;
-    z-index: 999;
-    top: 0;
-    left: 500px;
-    display: none;
-    padding: 50px;
-}
-
-.carousel img {
-    max-width: 800px;
-}
-
-

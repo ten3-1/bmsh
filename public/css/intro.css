@@ -13,15 +13,48 @@ body {
 
 /* gestion de l'animation à l'arrivée sur le site */
 #animation {
-  position: absolute;
+    width: 100vw !important;
+    position: absolute;
 }
 
 #content {
-    display: none;
+/*    display: none;*/
     overflow: hidden;
 }
 /* gestion de l'animation à l'arrivée sur le site */
+.row {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    opacity: 0.8;
+    border:1px red solid;
 
+}
+
+.row img {
+    display: none;
+    margin: 0;
+    align-self: center;
+    box-shadow: 0 0 10px black;
+     -webkit-box-shadow: inset 0px 0px 51px 39px rgba(0,0,0,1);
+    -moz-box-shadow: inset 0px 0px 51px 39px rgba(0,0,0,1);
+    box-shadow: inset 0px 0px 51px 39px rgba(0,0,0,1);
+}
+
+.logo-intro {
+    width: 100%;
+    border: 1px red solid;
+    margin: 0 auto;
+}
+
+.logo-intro img {
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+    border: 1px yellow solid;
+}
 
 #animation img {
     display: inline-block;
@@ -32,55 +65,4 @@ body {
     position: relative;
     top: 200px;
     border-collapse: collapse;
-}
-
-.mshnb,.boutique, video, .mains{
-    display: none;
-    background-size: cover;
-    background-position: center;
-    position: absolute;
-    border:0 black solid;
-    border-radius: 50%;
-    -webkit-box-shadow: inset 0px 0px 51px 39px rgba(0,0,0,1);
-    -moz-box-shadow: inset 0px 0px 51px 39px rgba(0,0,0,1);
-    box-shadow: inset 0px 0px 51px 39px rgba(0,0,0,1);
-}
-.mshnb {
-    background-image: url("../img/mshnb.jpg");
-    left: 880px;
-    top: 10px;
-    width: 700px;
-    height: 700px;
-}
-
-.boutique {
-    background-image: url("../img/boutique.jpg");
-    left: 10px;
-    top: 270px;
-    width: 480px;
-    height: 480px;
-}
-
-video {
-    display: none;
-    position: absolute;
-    left: 550px;
-    top: 400px;
-    width: 280px;
-    height: 280px;
-    border-radius: 50%;
-}
-
-.mains {
-    background-image: url('../img/mains.jpg');
-    position: absolute;
-    font-family: 'Sofia', cursive;
-    text-transform: uppercase;
-    font-size: 2em;    
-    color: white;
-    left: 410px;
-    top: 10px;
-    border-radius: 50%;
-    width: 350px;
-    height: 350px;
 }

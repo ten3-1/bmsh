@@ -1,4 +1,4 @@
-
+{# 
 {% block body %}
 
 <ul>
@@ -7,4 +7,30 @@
     {% endfor %}
 </ul>
 
-{% endblock %}
+{% endblock %} #}
+
+
+
+	<section class="produits">
+        <div class="grid">
+		{% for p in listProduits %}
+			<figure class="effect-winston">
+
+				{# On vérifie qu'une image soit bien associée à l'annonce #}
+				{# {% if urlPhoto is not null %}
+				  <img src="{{ urlPhoto.photo }}" alt="Photo du produit : {{ urlPhoto.nomProduit }}">
+				{% endif %} #}
+
+		        <figcaption>
+		            <a href="" alt="{{ p.nomProduit }}" >
+		            	<h2>{{ p.nomProduit }}</h2>
+		            </a>
+		            <p>{{ p.description }}</p>
+	            	<a href="">
+	                    <i class="fa fa-plus-circle" aria-hidden="true"></i>
+	                </a>
+		        </figcaption>
+		    </figure>
+		{% endfor %}
+		</div>
+	</section>

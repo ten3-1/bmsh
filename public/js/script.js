@@ -33,20 +33,6 @@ $(document).ready(function() {
 
 
 
-// flexslider - page d'accueil - menu Savoir-faire
-$(window).load(function() {
-	$('.flexslider').flexslider({
-	animation: "slide",
-	animationLoop: false,
-	itemWidth: 210,
-	itemMargin: 5,
-	minItems: 2,
-	maxItems: 4
-	});
-});
-
-
-
 
 ///
 function CSVToArray( strData, strDelimiter ){
