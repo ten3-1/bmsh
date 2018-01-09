@@ -5,9 +5,30 @@
 {% block body %}
     <h2>Catalogue</h2>
     <h3>Many Produts to One Catalogue</h3>
+    <p>Affichage de tous les produits d'une même catégorie.</p>
 
-{% for p in listProduits %}
-<li><a href="" alt="{{ p.nomProduit }}" ></a>{{ p.nomProduit }}</a></li>
-{% endfor %}
+
+	<section class="produits">
+        <div class="grid">
+		{% for p in listProduits %}
+			<figure class="effect-winston">
+
+
+
+				<img src="img/produits/{{ p.photo }}" alt="Photo du produit : {{ p.nomProduit }}">
+		        <figcaption>
+		            <a href="" alt="{{ p.nomProduit }}" >
+		            	<h2>{{ p.nomProduit }}</h2>
+		            </a>
+		            <p>{{ p.description }}</p>
+	            	<a href="#">
+	                    <i class="fa fa-plus-circle" aria-hidden="true"></i>
+	                </a>
+		        </figcaption>
+		    </figure>
+		{% endfor %}
+		</div>
+	</section>
+
 
 {% endblock %}

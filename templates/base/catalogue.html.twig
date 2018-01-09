@@ -1,19 +1,37 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Catalogue{% endblock %}
-
 {% block body %}
+
 <section class="page-catalogue">
     <h2>Catalogue</h2>
     <section class="contenu-catalogue">
         <nav class="nav-catalogue">
             <ul>
               {% for c in categorie %}
-                    <li><a href="" alt="{{ c.nomCategorie }}" >{{ c.nomCategorie }}</a></li>
+                    <li><a href="catalogue/{{c.id}}" alt="{{ c.nomCategorie }}" >{{ c.nomCategorie }}</a></li>
                 {% endfor %}
             </ul>
         </nav>
     </section>
+</section>
+
+<section>
+    {% for p in listProduits %}
+        <figure class="effect-winston">
+
+            <img src="img/produits/{{p.photo }}" alt="Photo du produit : {{ p.nomProduit }}">
+            <figcaption>
+                <a href="" alt="{{ p.nomProduit }}" >
+                    <h2>{{ p.nomProduit }}</h2>
+                </a>
+                <p>{{ p.description }}</p>
+                <a href="#">
+                    <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                </a>
+            </figcaption>
+        </figure>
+    {% endfor %}
 </section>
 
 
