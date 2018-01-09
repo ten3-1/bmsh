@@ -515,9 +515,7 @@ h2{
 
 
 
-
 footer{
-  margin-top: 400px;
 	text-decoration: none;
 	font-family: 'Barlow Condensed', sans-serif;
 	text-align: center;
@@ -539,10 +537,4 @@ footer li:hover {
 	border-top: 3px solid #F26D31;
 	border-bottom: 3px solid #F26D31;
 	padding: 3px 0;
-}
-
-#credits{
-  text-align: center;
-  font-family: 'Barlow Condensed', sans-serif;
-  color:white;
 }

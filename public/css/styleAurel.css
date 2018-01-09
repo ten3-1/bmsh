@@ -27,7 +27,7 @@ body {
 	font-family: 'Stalemate', cursive; OUI
 	font-family: 'Vibur', cursive; OUI
 */
-a{
+a {
 	text-decoration: none;
 	color: #5F677D;
 }
@@ -91,51 +91,6 @@ header {
 	font-size: 2em;
 	margin: 10px;
 	color: #F26D31;
-}
-
-
-/* en-tête avec image */
-.entete {
-	width: 100%;
-}
-
-.entete img {
-	width: 100%;
-	height: 1000px;
-	object-fit: cover;
-}
-
-
-/* ------------------- NAVIGATION ------------------- */
-.nav-principal .fa {
-	font-size: 0.7em;
-}
-
-.nav-principal ul {
-	font-family: 'Dancing Script', cursive;
-	font-size: 1.5em;
-	border: 1px lightgrey solid;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
-	padding: 10px 0;
-	margin-top: 0;
-}
-
-.nav-principal li {
-	margin: 10px 0;
-}
-
-.nav-principal a {
-	font-size: 1.3em;
-	transition: 0.3s ease;
-}
-
-.nav-principal a:hover {
-	color: #F26D31;
-	border-top: 3px solid #F26D31;
-	border-bottom: 3px solid #F26D31;
-	padding: 3px 0;
 }
 
 /* -------------------  page accueil : main ------------------- */
@@ -660,44 +615,4 @@ figure.effect-winston{
 	transition: 0.5s ease;
 	margin: 0 15px;
 } */
-
-
-
-/* ------------------- FOOTER ------------------- */
-footer {
-	width: 85%;
-	margin-top: 40px;
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	padding: 15px;
-	border: 1px solid red;
-}
-
-.nav-admin {
-	display: flex;
-	flex-direction: row;
-	padding: 10px;
-}
-
-.nav-admin a {
-	font-size: 0.8em;
-	margin: 20px;
-}
-
-footer p {
-	text-transform: uppercase;
-	font-size: 0.8em;
-	border: 1px solid red;
-}
-
-.logos {
-	display: block;
-}
-
-.logos img {
-	width: 5%;
-	object-fit: contain;
-	border: 1px solid red;
-}
 

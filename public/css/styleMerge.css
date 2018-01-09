@@ -1,0 +1,534 @@
+/* styles CSS rassemblés */
+
+html {
+	height: 100%;
+}
+
+body {
+	background: radial-gradient(center center, circle cover, #c9c2b6, #5F677D);
+	background: -moz-radial-gradient(center center, circle cover, #c9c2b6 0%, #5F677D 100%);
+	background: -webkit-radial-gradient(center center, circle cover, #c9c2b6 0%, #5F677D 100%);
+	font-family: 'Barlow Condensed', sans-serif;
+}
+
+main {
+	text-align: center;
+	margin: 0 auto;
+}
+
+
+h2 {
+	font-size: 2em;
+	color: #f26D31;
+}
+
+#parent {
+	padding-top: 55%;
+	margin:0 auto;
+	width:100%;
+	text-align: center;
+	position: relative;
+	display:flex;
+	flex-direction:row;
+	justify-content: center;
+	align-content: space-around;
+	-moz-box-shadow:    inset 0 0 25px #000000;
+	-webkit-box-shadow: inset 0 0 25px #000000;
+	box-shadow:         inset 0 0 25px #000000;
+	opacity: 0;
+	-webkit-transition: opacity 3s ease-in;
+	-moz-transition: opacity 3s ease-in;
+	-ms-transition: opacity 3s ease-in;
+	-o-transition: opacity 3s ease-in;
+	transition: opacity 3s ease-in;
+}
+
+#parent.load {
+    opacity: 1;
+}
+
+.sandwich {
+	position: absolute;
+	left:0;
+	top: 0;
+	width: 100%;
+	height:1400px;
+}
+ 
+.nav {
+	margin-left: 80px;
+	margin-right: 80px;
+	font-size:80px;
+}
+
+a {
+	text-decoration: none;
+	color: white;
+	text-shadow: 1px 1px 3px rgba(150, 150, 150, 1);
+}
+
+a:hover {
+	-webkit-mask-image: linear-gradient(-75deg, rgba(0,0,0,.8) 50%, #000 50%, rgba(0,0,0,.8) 70%);
+	-webkit-mask-size: 200%;
+	animation: shine 2s infinite;
+}
+
+@-webkit-keyframes shine {
+  from {
+    -webkit-mask-position: 150%;
+  }
+
+  to {
+    -webkit-mask-position: -50%;
+  }
+}
+
+.sidebar {
+	position: fixed;
+	top: 45%; left: 98%;
+	width: 310px; height: 900px;
+	margin: -150px 0 20px -200px;
+	padding: 1.4em;
+	box-sizing: border-box;
+	text-shadow: 1px 1px 3px rgba(150, 150, 150, 1);
+	padding-top:80px;
+	border-radius: 4px;
+  	z-index: 11;
+}
+
+.sidebar:fixed {
+	content: '';
+	position: absolute;
+	top: 0; right: 0; bottom: 0; left: 0;
+	z-index: -1;
+	border-radius:inherit;
+	-webkit-filter: blur(5px);
+}
+
+.logo {
+	text-transform: uppercase;
+	font-size: 1em;
+	left: 1340px;
+}
+
+.logo a {
+	color: #f26D31;
+}
+
+.logo p {
+	margin: 0;
+}
+
+.logo:hover {
+	-webkit-mask-image: linear-gradient(-75deg, rgba(0,0,0,.8) 50%, #000 50%, rgba(0,0,0,.8) 70%);
+	-webkit-mask-size: 200%;
+	animation: shine 2s infinite;
+}
+
+@-webkit-keyframes shine {
+	from {
+		-webkit-mask-position: 150%;
+	}
+
+	to {
+		-webkit-mask-position: -50%;
+	}
+}
+
+.incline {
+	writing-mode: vertical-rl;
+  	text-orientation: sideways;
+	transform: rotate(-180deg);
+	font-size: 5.5em;
+	text-align: left;
+	letter-spacing: 8px;
+}
+
+.logo-pierre {
+	width: 130px;
+	text-align: center;
+	font-size: 0.9em;
+}
+
+/* ???????????????????????????????????????????? */
+div img {
+    text-align: center;
+    width: 280px;
+    border: 1px orange dashed;
+}
+
+
+/* ------------------------------ calques ------------------------------ */
+#back {
+	z-index: 1;
+}
+
+#light1 {
+	z-index: 8;
+	opacity:0;
+}
+
+#light2 {
+	z-index: 8;
+	opacity:0;
+}
+
+#light3 {
+	z-index: 8;
+	opacity:0;
+}
+
+#light4 {
+	z-index: 8;
+	opacity:0;
+}
+
+#label {
+	z-index: 9;
+}
+
+#boy {
+	z-index: 5;
+}
+
+#old {
+	z-index: 4;
+}
+
+#pierrephoto {
+	z-index: 3;
+}
+
+/* -------------------- effects shake sur cadres + phone ------------------------ */
+.shakey {
+	animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+	transform: translate3d(0, 0, 0);
+	backface-visibility: hidden;
+	perspective: 1000px;
+}
+
+@keyframes shake {
+	10%, 90% {
+		transform: translate3d(-1px, 0, 0);
+	}
+
+	20%, 80% {
+		transform: translate3d(2px, 0, 0);
+	}
+
+	30%, 50%, 70% {
+		transform: translate3d(-4px, 0, 0);
+	}
+
+	40%, 60% {
+		transform: translate3d(4px, 0, 0);
+	}
+}
+
+#telephone {
+	z-index: 2;
+}
+
+#ensemble {
+	z-index: 7;
+}
+
+#flou {
+	z-index: 10;
+  	-webkit-box-shadow: inset 0px 0px 51px 39px rgba(0,0,0,1);
+    -moz-box-shadow: inset 0px 0px 51px 39px rgba(0,0,0,1);
+    box-shadow: inset 0px 0px 51px 39px rgba(0,0,0,1);
+}
+
+/* -------------------------- PENDULE -----------------------------*/
+
+.clock {
+	z-index:6;
+	width:193px;
+	height:193px;
+	border-radius:50%;
+	border: 4px solid black;
+	margin:auto;
+	position:absolute;
+	top:100px; left:20px;
+	background:#f0f1e9;
+	-webkit-box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.75);
+	box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.75);
+}
+.clock::before {
+	content:'';
+	width:130px;
+	height:130px;
+	position:absolute;
+	margin:auto;
+	top:0; right:0; bottom:0; left:0;
+	border-radius:50%;
+	background: -webkit-linear-gradient(top, #e9eae2, #f5f5ec 100%);
+	background: -moz-linear-gradient(top, #e9eae2, #f5f5ec 100%);
+	background: linear-gradient(top, #e9eae2, #f5f5ec 100%);
+}
+
+.numbers, clockwise {
+	width:100%;
+	height:100%;
+	border-radius:50%;
+}
+
+.numbers ul {
+ 	list-style:none;
+}
+
+.numbers ul li {
+	position:absolute;
+	width:1.5em;
+	height:1.5em;
+	text-align:center;
+	line-height:1.5em;
+	font-size:1.3em;
+	color:#a5a595;
+}
+
+.numbers ul li:first-child {
+	top:0;
+	left:50%;
+	margin-left:-0.75em;
+}
+
+.numbers ul li:nth-child(2) {
+	top:50%;
+	right:0;
+	margin-top:-0.75em;
+}
+
+.numbers ul li:nth-child(3) {
+	left:50%;
+	bottom:0;
+	margin-left:-0.75em;
+}
+
+.numbers ul li:last-child{
+	top:50%;
+	left:0;
+	margin-top:-0.75em;
+}
+
+.clockwise .center, .support {
+	position:absolute;
+	width:10px;
+	height:10px;
+	border-radius:50%;
+	background: radial-gradient(center center, circle , #ffffff, #837874 97%, #b4b2aa 100%);
+	background: -moz-radial-gradient(center center, circle,#ffffff, #837874 97%, #b4b2aa 100%);
+	background: -webkit-radial-gradient(center center, circle , #ffffff, #837874 97%, #b4b2aa 100%);
+	background-position:50% -12px;
+	box-shadow: 0 3px 5px rgba(0,0,0,0.3);
+}
+
+.clockwise .center {
+	left:50%; margin-left:-5px;
+	top:50%; margin-top:-5px;
+	z-index:5;
+}
+
+[class*="hand-"] {
+	border-radius: 100% 100% 5px 5px;
+	box-shadow: 0 0 0.5em rgba(black,0.2);
+	left: 50%;
+	position: absolute;
+	top: 50%;
+	z-index: 4;
+	box-shadow:0 5px 5px rgba(0,0,0,0.3);
+}
+
+.hand-second {
+	width: 2px;
+	top: 18px;
+	height: 78px;
+	background:#f16e54;
+	transform-origin: 50% 100%;
+}
+
+.hand-minute {
+	width: 6px;
+	top:26px;
+	margin-left:-3px;
+	height: 88px;
+	background:#68645b;
+	transform-origin: 50% 80%;
+}
+
+.hand-hour {
+	width: 6px;
+	top: 56px;
+	transform-origin: 50% 40px;
+	margin-left:-3px;
+	height: 50px;
+	background:#68645b;
+}
+
+/* animation JS */
+.wobble {
+	animation: shake 0.7s cubic-bezier(.36,.07,.19,.97) both;
+	transform: translate3d(0, 0, 0);
+	backface-visibility: hidden;
+	perspective: 1000px;
+}
+
+@keyframes shake {
+	10%, 90% {
+		transform: translate3d(-1px, 0, 0);
+	}
+
+	20%, 80% {
+		transform: translate3d(2px, 0, 0);
+	}
+
+	30%, 50%, 70% {
+		transform: translate3d(-4px, 0, 0);
+	}
+
+	40%, 60% {
+		transform: translate3d(4px, 0, 0);
+	}
+}
+
+
+/* animation JS */
+.phonecall {
+	animation: call 0.7s cubic-bezier(.36,.07,.19,.97) both;
+	transform: translate3d(0, 0, 0);
+	backface-visibility: hidden;
+	perspective: 1000px;
+}
+
+@keyframes call {
+	10%, 90% {
+		transform: translate3d(-1px, 0, 0)rotate(1deg);
+	}
+	20%, 80% {
+		transform: translate3d(2px, 0, 0) rotate(0deg);
+	}
+
+	30%, 50%, 70% {
+		transform: translate3d(-4px, 0, 0)rotate(-1deg);
+	}
+
+	40%, 60% {
+		transform: translate3d(4px, 0, 0)rotate(0deg);
+	}
+}
+
+
+/* ??????????????????????????????????????? */
+/*
+#box {
+ 	z-index:10;
+}*/
+
+/* -------------------------- Fancy-box Pierre -------------------------- */
+#pierrestory {
+	width:40%;
+	border-radius: 5px;
+	margin: 0 auto;
+	background-color: #5f677d;
+	background-image: url("https://www.transparenttextures.com/patterns/dark-wood.png");
+}
+
+.poloroid {
+	width: 15%;
+	margin-left: 30px;
+}
+
+.poloroid img {
+	border: 10px solid #fff;
+	border-bottom: 45px solid #fff;
+	-webkit-box-shadow: 3px 3px 3px #777;
+	-moz-box-shadow: 3px 3px 3px #777;
+	box-shadow: 3px 3px 3px #777;
+}
+
+#pierrestory section {
+	display:flex;
+	flex-direction:row;
+	color: white;
+}
+
+.top {
+	justify-content:space-around;
+}
+
+#pierrestory p {
+	font-size: 1.5em;
+	width: 30%;
+	margin-left: 22px;
+}
+
+#left {
+	transform: rotate(4deg);
+}
+
+#right {
+	transform: rotate(-4deg);
+}
+
+/* ??????????????????????????????????????? */
+/*
+.textnav {
+	color: white;
+	font-size: 60px;
+	border: 2px red solid;
+}*/
+
+/* ----------------------- texte-légende des cadres ---------------------- */
+#prodtext {
+  z-index:9;
+  opacity:0;
+}
+
+#pierretext {
+  z-index:9;
+  opacity:0;
+}
+
+#philostext {
+  z-index:9;
+ opacity:0;
+}
+
+#contacttext {
+  z-index:9;
+  opacity:0;
+}
+
+#boutitext {
+  z-index:9;
+  opacity:0;
+}
+
+#actutext {
+  z-index:9;
+  opacity:0;
+}
+
+/* ------------------------ footer ------------------------ */
+footer {
+	text-decoration: none;
+	text-align: center;
+	color: red;
+}
+
+footer li {
+	list-style:none;
+	display:inline-block;
+	margin-right: 50px;
+	font-size: 2em;
+	transition: 0.3s ease;
+}
+
+footer li:hover {
+	color: #F26D31;
+	border-top: 3px solid #F26D31;
+	border-bottom: 3px solid #F26D31;
+	padding: 3px 0;
+}
