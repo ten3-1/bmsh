@@ -1,16 +1,24 @@
 {% extends 'admin.html.twig' %}
-{% block title %}Page Admin{% endblock %}
+{% if is_granted('ROLE_ADMIN') %}
+
+{% block title %}{% endblock %}
 
 {% block body %}
-<p>Ici on affichera la page admin.<br />
-Mais faut un mot de passe pour se connecter.</p>
+<main>
+<p>Bienvenue sur la page admin</p><br />
 <nav>
     <ul>
         <li><a href="./admin/ajouter-produit">Ajouter un nouveau produit</a></li>
         <li><a href="./admin/modifier-produit">Modifier un produit existant</a></li>
+        <li><a href="./admin/creer-newsletter">Créer une newsletter</a></li>
         <li><a href="./admin/envoyer-newsletter">Envoyer une newsletter</a></li>
         <li><a href="./admin/ajouter-boutique">Ajouter une boutique</a></li>
         <li><a href="./admin/modifier-boutique">Modifier nos boutiques</a></li>
+        <br>
+        <li><a href="./admin/logout">Logout</a></li>
     </ul>
 </nav>
+</main>
 {% endblock %}
+   
+{% endif %}

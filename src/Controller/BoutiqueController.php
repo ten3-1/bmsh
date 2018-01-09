@@ -27,6 +27,15 @@ class BoutiqueController extends Controller{
             $em->flush();
             // $this->addFlash("success","yay §§§");
         }
-        return $this->render("base/boutique.html.twig", ["form" => $form->createView()]);
+        return $this->render("admin/ajouter-boutique.html.twig", ["form" => $form->createView()]);
+    }
+    
+    public function listBoutique()
+    {
+        $categorie = $this->getDoctrine() // utilise doctrine
+                           ->getRepository(Categorie::class) // lie à la bdd Categories dans le repository
+                           ->findAll(); // affiche tout
+        // transforme $categories local en variable utilisable dans le fichier catalogue.html.twig
+        return $this->render("base/boutique.html.twig", ["boutique" => $boutique]);
     }
 }

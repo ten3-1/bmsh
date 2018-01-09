@@ -11,94 +11,97 @@ html {
 
 /* ------------------- GLOBAL ------------------- */
 body {
-	width: 100%;
 	font-family: 'Barlow Condensed', sans-serif;
-	margin: 10px;
 	color: #5F677D;
-}
 
-/* ------------------- LOGO ------------------- */
-header {
-	/* poitionné à droite : contient le logo */
-	width: 200px;
-	height: 100%;
-	position: fixed;
-	left: 87%;
-}
+	font-size:1.4em;
+	margin: 0 auto;
+	text-align:center;
+	background: radial-gradient(center center, circle cover, #c9c2b6, #5F677D);
+	background: -moz-radial-gradient(center center, circle cover, #c9c2b6 0%, #5F677D 100%);
+	background: -webkit-radial-gradient(center center, circle cover, #c9c2b6 0%, #5F677D 100%);
 
-.logo {
-	padding: 15px;
-	text-transform: uppercase;
-	font-size: 1em;
-	z-index: 500 !important;
-}
-
-.logo a {
-	text-decoration: none;
-	color: #5F677D;
-}
-
-.logo p {
-	margin: 0;
-}
-
-.incline {
-	writing-mode: vertical-rl;
-  	text-orientation: sideways;
-	transform: rotate(-180deg);
-	font-size: 4.5em;
-	text-align: left;
-	letter-spacing: 7px;
-}
-
-.logo-pierre {
-	width: 160px;
-	text-align: center;
-	font-size: 0.9em;
-}
-
-h2 {
-	font-size: 1.5em;
-	font-weight: normal;
-	margin: 20px;
-	font-family: 'Cookie', cursive;
 }
 
 main {
-	border: 1px solid lightgrey;
-	width: 85%;
+	width: 50%;
+	background-color: rgba(255,255,255, 0.9);
+	margin: 0 auto;
+	text-align:center;
 }
 
-/* menu de navigation */
-.nav-admin ul {
-	font-size:2em;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
-	margin-top: 0;
-	padding: 0 15px;
+
+
+
+
+/* ------------------- Debut Admin ------------------- */
+
+.logoadmin{
+	width: 25%;
 }
 
-.nav-admin li {
-	list-style-type: none;
-}
-
-.nav-admin a {
-	font-family: 'Cookie', cursive;
+li{
 	text-decoration: none;
-	color: #5F677D;
-	transition: 0.3s ease;
+	text-align:left;
 }
 
-.nav-admin a:hover {
-	color: #F26D31;
-	border-top: 3px solid #F26D31;
-	border-bottom: 3px solid #F26D31;
-	padding: 3px 0;
+
+/* ------------------- Fin Admin ------------------- */
+
+/* formulaire */
+
+
+
+.formulaire-contact {
+    width: 50%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    background-color: silver;
+    margin: 0 auto;
 }
 
-/* section principale */
+.formulaire-contact label {
+    display: inline-block;
+    text-align: left;
+    margin-top: 30px;
+}
+.formulaire-contact input {
+    width: 50%;
+    height: 40px;
+    padding: 8px;
+    margin-left: 10px;
+}
+.formulaire-contact textarea {
+    margin-left: 10px;
+}
 
+.reponseOK {
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 10px;
+    background-color: #143A52;
+    color: silver;
+    padding: 3px;
+    border-radius: 5px;
+    text-align: center;
+    display: visible;
+}
+
+
+
+.reponseKO {
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 10px;
+    background-color: #143A52;
+    color: #f53b3b;
+    padding: 3px;
+    border-radius: 5px;
+    text-align: center;
+    }
+    /* fin formulaire */
 
 
 /* ------------------- FOOTER ------------------- */
@@ -128,3 +131,5 @@ footer p {
 	text-transform: uppercase;
 	font-size: 0.8em;
 }
+
+

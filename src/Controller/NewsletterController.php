@@ -29,12 +29,13 @@ class NewsletterController extends Controller{
         }
         return $this->render("base/newsletter.html.twig", ["form" => $form->createView()]);
     }
+    /**
+     * @Route("admin/envoyer-newsletter", name="creer newsletter")
+     */
 
-    function addNewsletter(){
+    function envoyerNewsletter(){
         // écrire une newsletter
+        return $this->render("/admin/envoyer-newsletter.html.twig");
     }
-
-    function sendNewsletter(){
-      // envoie la newsletter aux inscrits
-    }
+   
 }

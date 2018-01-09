@@ -5,13 +5,23 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
 use App\Entity\Produits;
+use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
+use Symfony\Component\Security\Core\Exception\AccessDeniedException;
+// ...
 
 class AdminController extends Controller{
+    
     /**
      * @Route("/admin", name="admin-page")
      */
-    function showAdmin(){
+       public function hello(AuthorizationCheckerInterface $authChecker)
+    {
+        if (false === $authChecker->isGranted('ROLE_ADMIN')) {
+            throw new AccessDeniedException('Unable to access this page!');
+        }
         return $this->render("admin/admin.html.twig");
+    
+        // ...
     }
     /**
      * @Route("/admin/ajou", name="admin-{page}")

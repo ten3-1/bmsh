@@ -3,7 +3,7 @@
 {% block title %}Ajouter une nouvelle boutique{% endblock %}
 
 {% block body %}
-{{ form_start(form) }}
+{{ form_start(form, {attr: {class: "formulaire-contact"} }) }}
 
 {{ form_row(form.nom_boutique) }}
 {{ form_row(form.adress_boutique) }}
@@ -12,4 +12,6 @@
 
 {{ form_end(form) }}
 
+<br>
+<li><a href="../admin">RETOUR</a></li>
 {% endblock %}
