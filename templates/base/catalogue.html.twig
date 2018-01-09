@@ -8,12 +8,12 @@
     <section class="contenu-catalogue">
         <nav class="nav-catalogue">
             <ul>
-              {% for c in categories %}
-                    <li><a href="" alt="{{ c.cat }}" >{{ c.cat }}</a></li>  
+              {% for c in categorie %}
+                    <li><a href="" alt="{{ c.nomCategorie }}" >{{ c.nomCategorie }}</a></li>
                 {% endfor %}
             </ul>
         </nav>
-    </section>    
+    </section>
 </section>
 
 
@@ -23,13 +23,12 @@
                 <div class="grid"> -->
 
 
-    
 {#         <figure class="effect-winston">
             {% for p in produits %}
             <img src="{{ p.photo }}" alt="">
             <figcaption>
                 <h2>{{ p.produit }}</h2>
-                <p>         
+                <p>
                     <a href="#">
                         <i class="fa fa-plus-circle" aria-hidden="true"></i>
                     </a>

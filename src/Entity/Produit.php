@@ -3,11 +3,13 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\ProduitsRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\ProduitRepository")
  */
-class Produits
+class Produit
 {
     /**
      * @ORM\Id
@@ -20,7 +22,7 @@ class Produits
     /**
      * @ORM\Column(type="string", length=128)
      */
-    private $produit;
+    private $nomProduit;
 
     /**
      * @ORM\Column(type="string", length=256)
@@ -28,10 +30,17 @@ class Produits
     private $description;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer")*
+     * @ORM\ManyToOne(targetEntity="App\Entity\Categorie")
+     * @ORM\JoinColumn(nullable=true)
      */
-    private $cat;
-
+    private $categorie;
+    /**
+     * @ORM\Column(type="integer")*
+     * @ORM\ManyToMany(targetEntity="App\Entity\Allergene")
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $allergene;
     /**
      * @ORM\Column(type="string", length=64)
      */
@@ -46,23 +55,31 @@ class Produits
      * @ORM\Column(type="integer")
      */
     private $active;
+    /**
+     * @ORM\Column(type="string", length=64)
+     */
+    private $urlProd;
 
     // Getters
     public function getId()
     {
         return $this->id;
     }
-    public function getProduit()
+    public function getNomProduit()
     {
-        return $this->produit;
+        return $this->nomProduit;
     }
     public function getDescription()
     {
         return $this->description;
     }
-    public function getCat()
+    public function getCategorie()
     {
-        return $this->cat;
+        return $this->categorie;
+    }
+    public function getAllergene()
+    {
+        return $this->allergene;
     }
     public function getPhoto()
     {
@@ -76,22 +93,30 @@ class Produits
     {
         return $this->active;
     }
+    public function getUrlProd()
+    {
+        return $this->urlProd;
+    }
     // Setters
     public function setId($id)
     {
         return $this->id = $id;
     }
-    public function setProduit($produit)
+    public function setNomProduit($nomProduit)
     {
-        return $this->produit = $produit;
+        return $this->nomProduit = $nomProduit;
     }
     public function setDescription($description)
     {
         return $this->description = $description;
     }
-    public function setCat($cat)
+    public function setCategorie(Categorie $categorie)
     {
-        return $this->cat = $cat;
+        return $this->categorie = $categorie;
+    }
+    public function setAllergene(Categorie $allergene)
+    {
+        return $this->allergene = $allergene;
     }
     public function setPhoto($photo)
     {
@@ -104,5 +129,9 @@ class Produits
     public function setActive($active)
     {
         return $this->active = $active;
+    }
+    public function setUrlProd($urlProd)
+    {
+        return $this->urlProd = $urlProd;
     }
 }

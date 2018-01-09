@@ -5,9 +5,9 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\BoutiquesRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\BoutiqueRepository")
  */
-class Boutiques
+class Boutique
 {
     /**
      * @ORM\Id
@@ -32,11 +32,8 @@ class Boutiques
      * @ORM\Column(type="integer")
      */
      private $telephone;
-     
-   
-    
+
      // Getters & Setters
-    
      public function getNomBoutique()
     {
         return $this->nomBoutique;
@@ -45,7 +42,7 @@ class Boutiques
     {
         return $this->nomBoutique = $nomBoutique;
     }
-    
+
         public function getAdressBoutique()
     {
         return $this->adressBoutique;
@@ -54,8 +51,7 @@ class Boutiques
     {
         return $this->adressBoutique = $adressBoutique;
     }
-    
-    
+
      public function getHoraires()
     {
         return $this->horaires;
@@ -64,8 +60,7 @@ class Boutiques
     {
         return $this->horaires = $horaires;
     }
-    
-    
+
      public function getTelephone()
     {
         return $this->telephone;
@@ -74,5 +69,4 @@ class Boutiques
     {
         return $this->telephone = $telephone;
     }
-     
 }

@@ -1,9 +1,9 @@
 {% extends 'admin.html.twig' %}
 
+{% block body %}
 <!-- ceci marchait normalement avant mais ce n'est pas du twig -->
 <!-- cela devra ressembler à ceci à terme mais avec les images à resize-->
-
-<form method="POST">
+<!-- <form method="POST">
         <fieldset>
             <legend><strong>Ajouter un nouveau produit</strong></legend>
             <input type="text" name="produit" placeholder="Nouveau produit">
@@ -11,6 +11,7 @@
                 <option value="1" name="categorie[]">Pain</option>
                 <option value="2" name="categorie[]">Viennoiserie</option>
                 <option value="3" name="categorie[]">Cake</option>
+                <option value="4" name="categorie[]">Autres</option>
             </select><br />
             <input type="checkbox" value="1" name="allergene[]"><img class="allergene"  src="{{ asset('./img/icones-allergenes/arachides.png') }}" alt="Allerges arachides">
             <input type="checkbox" value="2" name="allergene[]"><img class="allergene"  src="{{ asset('./img/icones-allergenes/avoine.png') }}" alt="Allerges avoines">
@@ -26,20 +27,10 @@
             <input type="checkbox" value="12" name="allergene[]"><img class="allergene" src="{{ asset('./img/icones-allergenes/soja.png') }}" alt="Allerges sojas"><br />
             <input type="file"><br />
             <button type="submit" name="submit" value="submit">Valider</button>
-<?php
-if (isset($_REQUEST["submit"]) && ($_REQUEST["submit"] == "submit"))
-{
-    $allergenes = $_POST["allergene"];
-    $categories = $_POST["categorie"];
-    foreach ($allergenes as $allergene){
-        $sql = $db->prepare("INSERT INTO allergenes (allergene) VALUE (:allergene)");
-        $sql->execute([":allergene" => htmlentities($allergene)]);
-    }
-    foreach ($categories as $cat){
-        $sql = $db->prepare("INSERT INTO categories (cat) VALUE (:cat)");
-        $sql->execute([":cat" => htmlentities($cat)]);
-    }
-}
-?>
         </fieldset>
-    </form>
+    </form> -->
+
+    {{ form_start(form) }}
+
+    {{ form_end(form) }}
+{% endblock %}

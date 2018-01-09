@@ -2,23 +2,23 @@
 
 namespace App\Repository;
 
-use App\Entity\Categories;
+use App\Entity\Produit;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
-class CategoriesRepository extends ServiceEntityRepository
+class ProduitRepository extends ServiceEntityRepository
 {
     public function __construct(RegistryInterface $registry)
     {
-        parent::__construct($registry, Categories::class);
+        parent::__construct($registry, Produit::class);
     }
 
     /*
     public function findBySomething($value)
     {
-        return $this->createQueryBuilder('c')
-            ->where('c.something = :value')->setParameter('value', $value)
-            ->orderBy('c.id', 'ASC')
+        return $this->createQueryBuilder('p')
+            ->where('p.something = :value')->setParameter('value', $value)
+            ->orderBy('p.id', 'ASC')
             ->setMaxResults(10)
             ->getQuery()
             ->getResult()

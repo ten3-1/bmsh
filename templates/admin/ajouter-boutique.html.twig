@@ -3,50 +3,13 @@
 {% block title %}Ajouter une nouvelle boutique{% endblock %}
 
 {% block body %}
-Formulaire
+{{ form_start(form) }}
+
+{{ form_row(form.nom_boutique) }}
+{{ form_row(form.adress_boutique) }}
+{{ form_row(form.horaires) }}
+{{ form_row(form.telephone) }}
+
+{{ form_end(form) }}
+
 {% endblock %}
-
-
-<!--
-
-
-<form method="POST">
-        <fieldset>
-            <legend><strong>Ajouter une nouvelle boutique</strong></legend>
-            <input type="text" name="nomBoutique" placeholder="Nom de boutique" alt="Nom de boutique">
-            <input type="text" name="adressBoutique" placeholder="boutique adress" alt="boutique adress">
-            <textarea name="horaires" cols="50" row="7" alt="heures d'ouvertures">Lundi:   7h - 19h30 <br>
-                                                                                  Mardi:   7h - 19h30 <br>
-                                                                                  Mecredi: 7h - 19h30 <br>
-                                                                                  Jeudi:   7h - 19h30 <br>
-                                                                                  Vendredi:7h - 19h30 <br>
-                                                                                  Samedi:  7h - 19h30 <br>
-                                                                                  Dimanche:7h - 13h   <br>
-                                                                                  </textbox>
-            <input type="number" name="telephone" placeholder="numéro de telephone" alt="numéro de telephone">
-            <button type="submit">AJOUTER BOUTIQUE</button>
-            <input type="hidden" name="codebar" value="boutique">
-            <div class="response">
-<?php
-if (isset($_REQUEST["submit"]) && ($_REQUEST["submit"] == "submit"))
-{
-    $nomBoutique = $_POST["nom_Boutique"];
-    $adressBoutique = $_POST["adress_Boutique"];
-    $horaires = $_POST["horaires"];
-    $telephone = $_POST["telephone"];
-    foreach ($boutiques as $boutique){
-       $sql = $db->prepare("INSERT INTO boutiques (nom_boutique, adress_boutique, horaires, telephone ) VALUES (:nom_boutique, :adress_Boutique, :horaires, :telephone,)");
-        $sql->execute([":nom_boutique" => htmlentities($nom_boutique),
-                        ":adress_boutique" => htmlentities($adress_boutique),
-                        ":horaires" => htmlentities($horaires),
-                        ":telephone" => htmlentities($telephone)
-        
-        ]);
-    }
-    
-}
-?>            
-            
-        </fieldset>
-</form>        
--->

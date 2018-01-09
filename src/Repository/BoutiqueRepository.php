@@ -2,15 +2,15 @@
 
 namespace App\Repository;
 
-use App\Entity\Boutiques;
+use App\Entity\Boutique;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
-class BoutiquesRepository extends ServiceEntityRepository
+class BoutiqueRepository extends ServiceEntityRepository
 {
     public function __construct(RegistryInterface $registry)
     {
-        parent::__construct($registry, Boutiques::class);
+        parent::__construct($registry, Boutique::class);
     }
 
     /*
