@@ -5,33 +5,40 @@ html {
 }
 
 body {
+	margin: 0;
 	background: radial-gradient(center center, circle cover, #c9c2b6, #5F677D);
 	background: -moz-radial-gradient(center center, circle cover, #c9c2b6 0%, #5F677D 100%);
 	background: -webkit-radial-gradient(center center, circle cover, #c9c2b6 0%, #5F677D 100%);
 	font-family: 'Barlow Condensed', sans-serif;
 }
 
-main {
-	text-align: center;
-	margin: 0 auto;
+header {
+	/*border: 1px red solid;*/
 }
-
 
 h2 {
 	font-size: 2em;
 	color: #f26D31;
 }
 
+li {
+	list-style-type: none;
+}
+
 #parent {
-	padding-top: 55%;
-	margin:0 auto;
-	width:100%;
-	text-align: center;
-	position: relative;
-	display:flex;
-	flex-direction:row;
+	border: 2px dashed yellow;
+	/*padding-top: 55%;*/
+	/*margin:0 auto;*/
+	/*width:100vw !important;
+	height: 100vh !important;*/
+	/*text-align: center;
+	position: relative;*/
+	/*display: flex;
+	flex-direction: row;
 	justify-content: center;
-	align-content: space-around;
+	align-content: space-around;*/
+	padding: 700px;
+	object-fit: cover;
 	-moz-box-shadow:    inset 0 0 25px #000000;
 	-webkit-box-shadow: inset 0 0 25px #000000;
 	box-shadow:         inset 0 0 25px #000000;
@@ -84,42 +91,37 @@ a:hover {
 }
 
 .sidebar {
-	position: fixed;
-	top: 45%; left: 98%;
-	width: 310px; height: 900px;
-	margin: -150px 0 20px -200px;
-	padding: 1.4em;
+	position: absolute;
+	top: 20px;
+	right: 0;
+	width: auto;
+	height: auto;
 	box-sizing: border-box;
 	text-shadow: 1px 1px 3px rgba(150, 150, 150, 1);
-	padding-top:80px;
-	border-radius: 4px;
+	/*padding-top:80px;*/
   	z-index: 11;
+  	text-transform: uppercase;
 }
 
-.sidebar:fixed {
+/* .sidebar:fixed {
 	content: '';
 	position: absolute;
 	top: 0; right: 0; bottom: 0; left: 0;
 	z-index: -1;
-	border-radius:inherit;
+	border-radius: inherit;
 	-webkit-filter: blur(5px);
-}
+} */
 
-.logo {
-	text-transform: uppercase;
-	font-size: 1em;
-	left: 1340px;
-}
-
-.logo a {
+.sidebar a {
 	color: #f26D31;
 }
 
-.logo p {
+.sidebar p {
 	margin: 0;
+	padding: 0;
 }
 
-.logo:hover {
+.sidebar:hover {
 	-webkit-mask-image: linear-gradient(-75deg, rgba(0,0,0,.8) 50%, #000 50%, rgba(0,0,0,.8) 70%);
 	-webkit-mask-size: 200%;
 	animation: shine 2s infinite;
@@ -139,24 +141,16 @@ a:hover {
 	writing-mode: vertical-rl;
   	text-orientation: sideways;
 	transform: rotate(-180deg);
-	font-size: 5.5em;
+	font-size: 4.9em;
 	text-align: left;
 	letter-spacing: 8px;
 }
 
-.logo-pierre {
-	width: 130px;
+.sidebar-pierre {
+	width: auto;
 	text-align: center;
-	font-size: 0.9em;
+	font-size: 1em;
 }
-
-/* ???????????????????????????????????????????? */
-div img {
-    text-align: center;
-    width: 280px;
-    border: 1px orange dashed;
-}
-
 
 /* ------------------------------ calques ------------------------------ */
 #back {
@@ -187,16 +181,17 @@ div img {
 	z-index: 9;
 }
 
-#boy {
+#pierrephoto {
+	z-index: 3;
+}
+
+#savoirfaire {
 	z-index: 5;
 }
 
-#old {
+#adress-boutiques {
 	z-index: 4;
-}
-
-#pierrephoto {
-	z-index: 3;
+	border: 1px red solid;
 }
 
 /* -------------------- effects shake sur cadres + phone ------------------------ */
@@ -241,94 +236,98 @@ div img {
 }
 
 /* -------------------------- PENDULE -----------------------------*/
-
 .clock {
-	z-index:6;
-	width:193px;
-	height:193px;
-	border-radius:50%;
-	border: 4px solid black;
-	margin:auto;
-	position:absolute;
-	top:100px; left:20px;
-	background:#f0f1e9;
+	z-index: 6;
+	/*width: 193px;
+	height: 193px;*/
+	width: 143px;
+	height: 143px;
+	border-radius: 50%;
+	border: 2px solid black;
+	margin: auto;
+	position: absolute;
+	top: 100px;
+	left: 20px;
+	background: #f0f1e9;
 	-webkit-box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.75);
 	-moz-box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.75);
 	box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.75);
 }
+
 .clock::before {
 	content:'';
-	width:130px;
-	height:130px;
-	position:absolute;
-	margin:auto;
-	top:0; right:0; bottom:0; left:0;
-	border-radius:50%;
+	width: 130px;
+	height: 130px;
+	position: absolute;
+	margin: auto;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	border-radius: 50%;
 	background: -webkit-linear-gradient(top, #e9eae2, #f5f5ec 100%);
 	background: -moz-linear-gradient(top, #e9eae2, #f5f5ec 100%);
 	background: linear-gradient(top, #e9eae2, #f5f5ec 100%);
 }
 
-.numbers, clockwise {
-	width:100%;
-	height:100%;
-	border-radius:50%;
-}
-
-.numbers ul {
- 	list-style:none;
+.numbers, .clockwise {
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
 }
 
 .numbers ul li {
-	position:absolute;
-	width:1.5em;
-	height:1.5em;
-	text-align:center;
-	line-height:1.5em;
-	font-size:1.3em;
-	color:#a5a595;
+	position: absolute;
+	width: 1.5em;
+	height: 1.5em;
+	text-align: center;
+	line-height: 1.5em;
+	font-size: 1em;
+	color: #a5a595;
 }
 
 .numbers ul li:first-child {
-	top:0;
-	left:50%;
-	margin-left:-0.75em;
+	top: 0;
+	left: 50%;
+	margin-left: -0.75em;
 }
 
 .numbers ul li:nth-child(2) {
-	top:50%;
-	right:0;
-	margin-top:-0.75em;
+	top: 50%;
+	right: 0;
+	margin-top: -0.75em;
 }
 
 .numbers ul li:nth-child(3) {
-	left:50%;
-	bottom:0;
-	margin-left:-0.75em;
+	left: 50%;
+	bottom: 0;
+	margin-left: -0.75em;
 }
 
 .numbers ul li:last-child{
-	top:50%;
-	left:0;
-	margin-top:-0.75em;
+	top: 50%;
+	left: 0;
+	margin-top: -0.75em;
 }
 
 .clockwise .center, .support {
 	position:absolute;
-	width:10px;
-	height:10px;
-	border-radius:50%;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
 	background: radial-gradient(center center, circle , #ffffff, #837874 97%, #b4b2aa 100%);
 	background: -moz-radial-gradient(center center, circle,#ffffff, #837874 97%, #b4b2aa 100%);
 	background: -webkit-radial-gradient(center center, circle , #ffffff, #837874 97%, #b4b2aa 100%);
-	background-position:50% -12px;
+	background-position: 50% -12px;
 	box-shadow: 0 3px 5px rgba(0,0,0,0.3);
 }
 
 .clockwise .center {
-	left:50%; margin-left:-5px;
-	top:50%; margin-top:-5px;
-	z-index:5;
+	left: 50%;
+	margin-left: -5px;
+	top: 50%;
+	margin-top: -5px;
+	z-index: 5;
 }
 
 [class*="hand-"] {
@@ -338,23 +337,15 @@ div img {
 	position: absolute;
 	top: 50%;
 	z-index: 4;
-	box-shadow:0 5px 5px rgba(0,0,0,0.3);
-}
-
-.hand-second {
-	width: 2px;
-	top: 18px;
-	height: 78px;
-	background:#f16e54;
-	transform-origin: 50% 100%;
+	box-shadow: 0 5px 5px rgba(0,0,0,0.3);
 }
 
 .hand-minute {
 	width: 6px;
-	top:26px;
-	margin-left:-3px;
-	height: 88px;
-	background:#68645b;
+	top: 26px;
+	margin-left: -3px;
+	height: 78px;
+	background: #68645b;
 	transform-origin: 50% 80%;
 }
 
@@ -362,9 +353,9 @@ div img {
 	width: 6px;
 	top: 56px;
 	transform-origin: 50% 40px;
-	margin-left:-3px;
-	height: 50px;
-	background:#68645b;
+	margin-left: -3px;
+	height: 35px;
+	background: #68645b;
 }
 
 /* animation JS */
@@ -426,6 +417,77 @@ div img {
  	z-index:10;
 }*/
 
+
+/* ----------------------- texte-légende des cadres ---------------------- */
+#prodtext {
+	z-index:9;
+	opacity:0;
+}
+
+#pierretext {
+	z-index:9;
+	opacity:0;
+}
+
+#philostext {
+	z-index:9;
+	opacity:0;
+}
+
+#contacttext {
+	z-index:9;
+	opacity:0;
+}
+
+#boutitext {
+	z-index:9;
+	opacity:0;
+}
+
+#actutext {
+	z-index:9;
+	opacity:0;
+}
+
+/* ------------------------ FOOTER ------------------------ */
+footer {
+	text-align: center;
+	border: 1px solid red;
+}
+
+.footer {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+footer nav ul {
+	border: 1px solid black;
+	width: 40vw;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+footer li {
+	margin: 5px auto;
+	font-size: 0.9em;
+	transition: 0.3s ease;
+}
+
+footer li:hover {
+	color: #F26D31;
+	/*border-top: 2px solid #F26D31;*/
+	/*border-bottom: 2px solid #F26D31;*/
+}
+
+footer form {
+	border: 1px solid black;
+	width: 40vw;
+	display: flex;
+	flex-direction: column;
+}
+
+
 /* -------------------------- Fancy-box Pierre -------------------------- */
 #pierrestory {
 	width:40%;
@@ -472,6 +534,8 @@ div img {
 	transform: rotate(-4deg);
 }
 
+
+
 /* ??????????????????????????????????????? */
 /*
 .textnav {
@@ -480,55 +544,235 @@ div img {
 	border: 2px red solid;
 }*/
 
-/* ----------------------- texte-légende des cadres ---------------------- */
-#prodtext {
-  z-index:9;
-  opacity:0;
-}
 
-#pierretext {
-  z-index:9;
-  opacity:0;
-}
 
-#philostext {
-  z-index:9;
- opacity:0;
-}
-
-#contacttext {
-  z-index:9;
-  opacity:0;
-}
-
-#boutitext {
-  z-index:9;
-  opacity:0;
-}
-
-#actutext {
-  z-index:9;
-  opacity:0;
-}
-
-/* ------------------------ footer ------------------------ */
-footer {
-	text-decoration: none;
+/* -------------------- page CATALOGUE ------------------------------- */
+.page-catalogue h2 {
+	width: 100%;
 	text-align: center;
+}
+
+.contenu-catalogue {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+}
+
+.nav-catalogue {
+	border: 1px red solid;
+}
+
+.contenu-catalogue ul {
+	font-size: 1.2em;
+
+}
+
+.contenu-catalogue li {
+	font-family: 'Dancing Script', cursive;
+	font-size: 1.6em;
+	margin: 30px 0;
+	width: 290px;
+}
+
+
+
+
+/* Affichage CSS avancé */
+/* http://epicadesign.fr/demos/HoverEffectImg/index.html */
+*, *:after, *:before {
+	 -webkit-box-sizing: border-box;
+	 box-sizing: border-box;
+} /* required*/
+
+.grid {
+	/* mon code */
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	/* code initial */
+	position: relative;
+	clear: both;
+	margin: 0 auto;
+	padding: 1em 0 4em;
+	/* max-width: 1000px; */
+/*	list-style: none;*/
+	text-align: center;
+}
+
+/* Common style */
+.grid figure {
+	position: relative;
+	float: left;
+	overflow: hidden;
+	margin: 10px 1%;
+	min-width: 240px;
+	max-width: 400px;
+	max-height: 280px;
+	width: 45%;
+	height: auto;
+	background: #3085a3;
+	text-align: center;
+	cursor: pointer;
+}
+
+.grid figure img {
+	position: relative;
+	display: block;
+	min-height: 100%;
+	max-width: 100%;
+	opacity: 0.8;
+}
+
+.grid figure figcaption {
+	padding: 2em;
+	color: #fff;
+	/* text-transform: lowercase; */
+	font-size: 1.25em;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.gtid figcaption h2 {
 	color: red;
 }
 
-footer li {
-	list-style:none;
-	display:inline-block;
-	margin-right: 50px;
-	font-size: 2em;
-	transition: 0.3s ease;
+.grid figure figcaption::before,
+.grid figure figcaption::after {
+	pointer-events: none;
 }
 
-footer li:hover {
-	color: #F26D31;
-	border-top: 3px solid #F26D31;
-	border-bottom: 3px solid #F26D31;
-	padding: 3px 0;
+.grid figure figcaption,
+.grid figure figcaption > a {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }
+
+/* Anchor will cover the whole item by default */
+.grid figure figcaption > a {
+	z-index: 1000;
+	text-indent: 200%;
+	white-space: nowrap;
+	font-size: 0;
+	opacity: 0;
+}
+
+.grid figure h2 {
+	word-spacing: -0.15em;
+	font-weight: 200;
+	text-shadow: 1px 1px 2px black;
+}
+
+/*
+.grid figure h2 span {
+	font-weight: 800;
+}*/
+
+.grid figure h2,
+.grid figure p {
+	margin: 0;
+}
+
+/* circle + dans triangle */
+.grid figure p {
+	letter-spacing: 1px;
+	/* font-size: 68.5%; */
+	text-shadow: 1px 1px 2px black;
+}
+
+figure.effect-winston{
+	/* background:#162633; */
+	background:#5F677D;
+	text-align:left
+}
+ figure.effect-winston img{
+ 	-webkit-transition:opacity .45s;
+ 	transition:opacity .45s;
+ 	-webkit-backface-visibility:hidden;
+ 	backface-visibility:hidden
+ }
+ figure.effect-winston figcaption::before{
+ 	position:absolute;
+ 	top:0;
+ 	left:0;
+ 	width:100%;
+ 	height:100%;
+ 	background:url("../img/triangle.svg") no-repeat center center;
+ 	background-size:100% 100%;
+ 	content:'';
+ 	-webkit-transition:opacity .45s,-webkit-transform .45s;
+ 	transition:opacity .45s,transform .45s;
+ 	-webkit-transform:rotate3d(0,0,1,45deg);
+ 	transform:rotate3d(0,0,1,45deg);
+ 	-webkit-transform-origin:0 100%;
+ 	transform-origin:0 100%
+ }
+ figure.effect-winston h2{
+ 	-webkit-transition:-webkit-transform .35s;
+ 	transition:transform .35s;
+ 	-webkit-transform:translate3d(0,20px,0);
+ 	transform:translate3d(0,20px,0)
+ }
+
+ figure.effect-winston p{
+ 	position:absolute;
+ 	right:0;
+ 	bottom:0;
+ 	padding:0 1.5em 7% 0
+ }
+
+ figure.effect-winston a{
+ 	margin:0 10px;
+ 	color:#cc6055;
+ 	font-size:170%
+ }
+ figure.effect-winston a:hover,
+ figure.effect-winston a:focus{
+ 	color:#5d504f
+ }
+ figure.effect-winston p a i{
+ 	opacity:0;
+ 	-webkit-transition:opacity .35s,-webkit-transform .35s;
+ 	transition:opacity .35s,transform .35s;
+ 	-webkit-transform:translate3d(0,50px,0);
+ 	transform:translate3d(0,50px,0)
+ }
+ figure.effect-winston:hover img{
+ 	opacity:.5
+ }
+ figure.effect-winston:hover h2{
+ 	-webkit-transform:translate3d(0,0,0);
+ 	transform:translate3d(0,0,0)
+ }
+ figure.effect-winston:hover figcaption::before{
+ 	opacity:.7;
+ 	-webkit-transform:rotate3d(0,0,1,20deg);
+ 	transform:rotate3d(0,0,1,20deg)
+ }
+
+ figure.effect-winston:hover p i{
+ 	opacity:1;
+ 	-webkit-transform:translate3d(0,0,0);
+ 	transform:translate3d(0,0,0)
+ }
+ figure.effect-winston:hover p a:nth-child(3) i{
+ 	-webkit-transition-delay:.05s;
+ 	transition-delay:.05s
+ }
+ figure.effect-winston:hover p a:nth-child(2) i{
+ 	-webkit-transition-delay:.1s;
+ 	transition-delay:.1s
+ }
+ figure.effect-winston:hover p a:first-child i{
+ 	-webkit-transition-delay:.15s;
+ 	transition-delay:.15s
+ }
+/* fin css avancé */
+
+
+
+

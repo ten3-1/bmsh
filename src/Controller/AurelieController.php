@@ -10,7 +10,8 @@ use App\Entity\Produit;
 
 class AurelieController extends Controller
 {
-    
+
+
     /**
      * @Route("/catalogue/{id}", name="id categorie")
      */
@@ -33,21 +34,7 @@ class AurelieController extends Controller
        			 
 
      return $this->render("base/list.html.twig", ["categorie" => $categorie, "listProduits" => $listProduits, "photo" => $urlPhoto]);
-
    }
-
-
-// $htmlImage = "";
-//     if ($chemin_image)
-//     {
-//         $htmlImage = 
-// <<<CODEHTML
-
-//     <img src="$urlAccueil/$chemin_image" title="$chemin_image">
-
-// CODEHTML;
-//     }
-
 
 
 

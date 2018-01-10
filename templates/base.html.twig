@@ -10,9 +10,8 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css"/>
         <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
         <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-        <link href="{{ asset('css/styleAurel.css') }}" rel="stylesheet">
-        <link href="{{ asset('css/styleThomas.css') }}" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/responsive.css') }}">
+        <link href="{{ asset('css/styleMerge.css') }}" rel="stylesheet">
     {% endblock %}
 </head>
 
@@ -28,7 +27,7 @@
                     <!-- #$AUTHOR:Etudiant -->
                     <area shape="rect" id="pierre" coords="76,318,549,731" target="pierre" data-fancybox data-src="#pierrestory" href="./pierre-ragot"/>
                     <area shape="rect" id="histoire" coords="991,111,1369,702" target="histoire" href="#"/>
-                    <area shape="rect" id="kid" coords="556,104,977,638" target="cut" href="./savoir-faire" />
+                    <area shape="rect" id="philo" coords="556,104,977,638" target="cut" href="./savoir-faire" />
                     <area shape="rect" id="contact" coords="1379,122,1798,813" target="telephone" href="./adresses" />
                     <area shape="rect" id="catalogue" coords="95,736,1373,1214" target="catalogue" href="./catalogue" />
                     <area shape="rect" id="actu" coords="0,15,540,315" target="actualité" href="./actu" />
@@ -42,6 +41,7 @@
                 <img class ="sandwich" id="pierretext" src="{{ asset('./img/accueil/pierreragot.png') }}">
                 <img class ="sandwich" id="prodtext" src="{{ asset('./img/accueil/produits.png') }}">
                 <!-- end of text for navigation -->
+                
                 <!--clock-->
                     <div class="clock">
                         <div class="numbers">
@@ -58,6 +58,7 @@
                             <div class="hand-hour" id="analoghour"></div>
                         </div>
                     </div>
+
             <!-- photos dans les cadres -->
             <img class ="sandwich" id="back" src="{{ asset('./img/accueil/background.png') }}">
             <img class ="sandwich" id="light1" src="{{ asset('./img/accueil/lamp1.png') }}">
@@ -65,45 +66,56 @@
             <img class ="sandwich" id="light3" src="{{ asset('./img/accueil/lamp3.png') }}">
             <img class ="sandwich" id="light4" src="{{ asset('./img/accueil/lamp4.png') }}">
             <img class ="sandwich" id="label" src="{{ asset('./img/accueil/catalogue.png') }}">
-            <img class ="sandwich" id="boy" src="{{ asset('./img/accueil/philosoph.png') }}">
-            <img class ="sandwich" id="old" src="{{ asset('./img/accueil/boutiques.png') }}">
+            <img class ="sandwich" id="savoirfaire" src="{{ asset('./img/accueil/philosoph.png') }}">
+            <img class ="sandwich" id="adress-boutiques" src="{{ asset('./img/accueil/boutiques.png') }}">
             <img class ="sandwich" id="pierrephoto" src="{{ asset('./img/accueil/pierre.png') }}">
             <img class ="sandwich" id="telephone" src="{{ asset('./img/accueil/telephone.png') }}">
             <img class ="sandwich" id="ensemble" src="{{ asset('./img/accueil/breadandlights.png') }}">
-            </div>
-        <div class ="sidebar">
-            <div class="logo">
+        </div>
+
+        <div class="sidebar">
+            {# <div class="logo"> #}
                 <a href=".">
-                <div class="incline">
-                    <p>maison</p>
-                    <p>saint honoré</p>
-                </div>
-                <p class="logo-pierre">par Pierre ragot</p>
-            </div>
+                    <div class="incline">
+                        <p>maison</p>
+                        <p>saint-honoré</p>
+                    </div>
+                    <p class="sidebar-pierre">par Pierre ragot</p>
+                </a>
+            {# </div> #}
         </div>
     </header>
 
         {% block body %}{% endblock %}
 
     <footer>
-        <nav>
-            <ul>
-                <!-- relier les href avec les ancres et pages correspondantes -->
-                <li><a href=".">ACCUEIL</a></li>
-                <li>ACTUALITÉS</li>
-                <li>PIERRE RAGOT</li>
-                <li>SAVOIR FAIRE</li>
-                <li><a href="catalogue">CATALOGUE</a></li>
-                <li>NOS BOUTIQUES</li>
-                <li>CONTACT</li>
-                                
-                <p>Maison Saint-Honoré par Pierre Ragot - {{ "now"|date("Y")}}</p>
+        <div class="footer">
+            <nav>
+                <ul>
+                    <li><a href=".">ACCUEIL</a></li>
+                    <li>Actualités</li>
+                    <li>Pierre Ragot</li>
+                    <li>Savoir-faire</li>
+                    <li><a href="catalogue">Catalogue</a></li>
+                    <li>Boutiques</li>
+                    <li>Contact</li>
+                </ul>
+            </nav>  
+
+            <!-- formulaire de contact -->
+            <form>
+                <label>Votre nom</label><input type="text" name="nom" placeholder="Votre nom">
+                <label>Votre email</label><input type="email" name="email" placeholder="Votre email">
+                <label>Votre message</label>
+                <textarea placeholder="Votre message"></textarea>
+                <button>Envoyer</button>
+            </form>
+        </div>
                 <!--réseaux sociaux icons-->
                 <li><a href="https://www.facebook.com/maisonsthonorepierreragot/" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
                 <li><a href="https://www.instagram.com/maisonsainthonoremarseille/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
                 <!--End réseaux sociaux-->
-            </ul>
-        </nav>
+        <p>Maison Saint-Honoré par Pierre Ragot - {{ "now"|date("Y")}}</p>
     </footer>
 
     {% block javascripts %}

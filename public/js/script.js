@@ -1,33 +1,38 @@
-// parallax sur l'image d'en-tête
+// // page catalogue - action sur les images
+// $(document).ready(function() {
+// 	$(".produits li").mouseenter(function() {
+// 		$(this).css({'opacity': 1});
+// 		// régler l'affichage des légendes au passage de la souris
+// 		// à faire quand la liaison avec la bdd sera faite
+// 		$(".produits figcaption").fadeIn(200);
+// 	});
+// 	$(".produits li").mouseleave(function() {
+// 		$(this).css({'opacity': 0.6});
+// 		// régler l'affichage des légendes au passage de la souris
+// 		// à faire quand la liaison avec la bdd sera faite
+// 		$(".produits figcaption").fadeOut(200);
+// 	});
+
+// });
 
 
-// flexslider en-tête
-/*$(document).ready(function() {
-  $('.flexslider').flexslider({
-    animation: "slide",
-    animationLoop: false,
-    itemWidth: 210,
-    itemMargin: 5
-  });
-});*/
-
-
-
-
-// page catalogue - action sur les images
+// affichage en AJAX du catalogue
 $(document).ready(function() {
-	$(".produits li").mouseenter(function() {
-		$(this).css({'opacity': 1});
-		// régler l'affichage des légendes au passage de la souris
-		// à faire quand la liaison avec la bdd sera faite
-		$(".produits figcaption").fadeIn(200);
-	});
-	$(".produits li").mouseleave(function() {
-		$(this).css({'opacity': 0.6});
-		// régler l'affichage des légendes au passage de la souris
-		// à faire quand la liaison avec la bdd sera faite
-		$(".produits figcaption").fadeOut(200);
-	});
+
+
+    $(".nav-catalogue li").on("click", function() {
+        // plus courte, peu de choses possibles à faire, pour un fichier json : 2 paramètres : adresse du fichier + fonction à faire
+        $.getJSON("template.html.twig", function(reponse) {
+            $(".grid").html("");
+            
+            reponse.forEach(function(produit) {
+                console.log("test ajax");
+                // const html = `<div>${produit.firstName} <strong>${produit.lastName}</strong> - (${produit.phoneNumber})</div>`;
+                // $(".grid").html($(".grid").html() + html);
+            })
+        })
+    });
+
 
 });
 
@@ -117,6 +122,8 @@ function CSVToArray( strData, strDelimiter ){
         // Return the parsed data.
         return( arrData );
     }
+
+
 
 $(document).ready(function(){
     $("p").click(function(){

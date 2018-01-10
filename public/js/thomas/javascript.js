@@ -4,200 +4,227 @@
 $(function(){
     //LOADING.....
     $("#parent").addClass("load");
+
     //FUNCTION HOME
     $("#pierre").mouseenter(function(){
-        $("#ensemble").animate({
-            opacity: 0
-        },0, function() {
-            // Callback
-            $("#light1").animate({
-                    opacity: 1
-            }, 0)
-        });
-  });
+      $("#ensemble").animate({
+        opacity: 0
+      },0, function() {
+        // Callback
+        $("#light1").animate({
+          opacity: 1
+        }, 0)
+      });
     });
-       $("#pierre").mouseleave(function(){
-        $("#ensemble").animate({
-            opacity: 1
-        },0, 
-        function() {
-            // Callback
-            $("#light1").animate({
-                    opacity: 0
-                }, 0)
-            });
-        });
+
+    $("#pierre").mouseleave(function(){
+      $("#ensemble").animate({
+        opacity: 1
+      },0, function() {
+        // Callback
+        $("#light1").animate({
+          opacity: 0
+        }, 0)
+      });
+    });
+
+
     //FUNCTION HISTOIRE
     $("#catalogue").mouseenter(function(){
-         $("#ensemble").animate({
-            opacity: 0
-        },0, function() {
-            // Callback
-            $("#light2").animate({
-                    opacity: 1
-                }, 0)
-            });
-
-        });
-           $("#catalogue").mouseleave(function(){
-        $("#ensemble").animate({
-            opacity: 1
-        },0, function() {
-            // Callback
-            $("#light2").animate({
-                    opacity: 0
-                }, 0)
-            });
-        });
-    ///FUNCTION ADDRESS
-      $("#histoire").mouseenter(function(){
-         $("#ensemble").animate({
-            opacity: 0
-        },0, function() {
-            // Callback
-            $("#light3").animate({
-                    opacity: 1
-                }, 0)
-            });
-        });
-           $("#histoire").mouseleave(function(){
-        $("#ensemble").animate({
-            opacity: 1
-        },0, function() {
-            // Callback
-            $("#light3").animate({
-                    opacity: 0
-                }, 0)
-            });
-        });
-    /// function philosph
-
-     $("#kid").mouseenter(function(){
-         $("#ensemble").animate({
-            opacity: 0
-        },0, function() {
-            // Callback
-            $("#light2").animate({
-                    opacity: 1
-                }, 0)
-            });
-        });
-           $("#kid").mouseleave(function(){
-        $("#ensemble").animate({
-            opacity: 1
-        },0, function() {
-            // Callback
-            $("#light2").animate({
-                    opacity: 0
-                }, 0)
-            });
-        });
-    ///FUNCTION CONTACT
-      $("#contact").mouseenter(function(){
-         $("#ensemble").animate({
-            opacity: 0
-        },0, function() {
-            // Callback
-            $("#light4").animate({
-                    opacity: 1
-                }, 0)
-            });
-               $("#contact").mouseleave(function(){
-        $("#ensemble").animate({
-            opacity: 1
-        },0, function() {
-            // Callback
-            $("#light4").animate({
-                    opacity: 0
-                }, 0)
-            });
-        });
-    });
-     ///END
-
- ///animation elements
-
-  $("#pierre").mouseenter(function(){
-      $("#pierrephoto").addClass("wobble")
-      $("#pierretext").animate({
-            opacity: 1
+      $("#ensemble").animate({
+        opacity: 0
+      },0, function() {
+        // Callback
+        $("#light2").animate({
+          opacity: 1
+        }, 0)
       });
-  });
+    });
 
-      
-   $("#pierre").mouseleave(function(){
-      $("#pierrephoto").removeClass("wobble")
+    $("#catalogue").mouseleave(function(){
+      $("#ensemble").animate({
+        opacity: 1
+      },0, function() {
+        // Callback
+        $("#light2").animate({
+          opacity: 0
+        }, 0)
+      });
+    });
+
+
+    ///FUNCTION ADDRESS
+    $("#histoire").mouseenter(function(){
+      $("#ensemble").animate({
+        opacity: 0
+      },0, function() {
+        // Callback
+        $("#light3").animate({
+          opacity: 1
+        }, 0)
+      });
+    });
+
+    $("#histoire").mouseleave(function(){
+      $("#ensemble").animate({
+        opacity: 1
+      },0, function() {
+        // Callback
+        $("#light3").animate({
+          opacity: 0
+        }, 0)
+      });
+    });
+
+
+    /// function philosph
+    $("#philo").mouseenter(function(){
+      $("#ensemble").animate({
+        opacity: 0
+      },0, function() {
+        // Callback
+        $("#light2").animate({
+          opacity: 1
+        }, 0)
+      });
+    });
+
+    $("#philo").mouseleave(function(){
+      $("#ensemble").animate({
+        opacity: 1
+      },0, function() {
+        // Callback
+        $("#light2").animate({
+          opacity: 0
+        }, 0)
+      });
+    });
+
+
+    ///FUNCTION CONTACT
+    $("#contact").mouseenter(function(){
+      $("#ensemble").animate({
+        opacity: 0
+      },0, function() {
+        // Callback
+        $("#light4").animate({
+          opacity: 1
+        }, 0)
+      });
+    });
+
+    $("#contact").mouseleave(function(){
+      $("#ensemble").animate({
+        opacity: 1
+      },0, function() {
+        // Callback
+        $("#light4").animate({
+          opacity: 0
+        }, 0)
+      });
+    });
+  /// END
+
+
+
+
+ /// ANIMATION DES CADRES
+
+    $("#pierre").mouseenter(function(){
+      $("#pierrephoto").addClass("wobble");
       $("#pierretext").animate({
-            opacity:0
+        opacity: 1
+      });
+    });
+      
+    $("#pierre").mouseleave(function(){
+      $("#pierrephoto").removeClass("wobble");
+      $("#pierretext").animate({
+        opacity:0
       });        
-  });
+    });
 
-  $("#contact").mouseenter(function(){
-      $("#telephone").addClass("phonecall")
-      $("#contacttext").animate({
-            opacity:1
-      }); 
-  });
-   $("#contact").mouseleave(function(){
-      $("#telephone").removeClass("phonecall")
-      $("#contacttext").animate({
-            opacity:0
-      });  
-  });
 
-  $("#catalogue").mouseenter(function(){
-      $("#label").addClass("wobble")
-       $("#prodtext").animate({
-            opacity:1
+    $("#contact").mouseenter(function(){
+      $("#telephone").addClass("phonecall");
+      $("#contacttext").animate({
+        opacity:1
       }); 
-  });
-   $("#catalogue").mouseleave(function(){
-      $("#label").removeClass("wobble")
-       $("#prodtext").animate({
-            opacity:0
+    });
+
+    $("#contact").mouseleave(function(){
+      $("#telephone").removeClass("phonecall");
+      $("#contacttext").animate({
+        opacity:0
       });  
-  });
-   $("#kid").mouseenter(function(){
-      $("#boy").addClass("wobble")
+    });
+
+
+    $("#catalogue").mouseenter(function(){
+      $("#label").addClass("wobble");
+        $("#prodtext").animate({
+          opacity:1
+        }); 
+      });
+
+    $("#catalogue").mouseleave(function(){
+      $("#label").removeClass("wobble");
+      $("#prodtext").animate({
+        opacity:0
+      });  
+    });
+
+
+    $("#philo").mouseenter(function(){
+      $("#savoirfaire").addClass("wobble");
       $("#philostext").animate({
-            opacity:1
+        opacity:1
       }); 
-  });
-   $("#kid").mouseleave(function(){
-      $("#boy").removeClass("wobble")
+    });
+
+    $("#philo").mouseleave(function(){
+      $("#savoirfaire").removeClass("wobble");
       $("#philostext").animate({
-            opacity:0
+        opacity:0
       });  
-  });
-     $("#histoire").mouseenter(function(){
-      $("#old").addClass("wobble")
+    });
+
+
+    $("#histoire").mouseenter(function(){
+      $("#adress-boutiques").addClass("wobble");
       $("#boutitext").animate({
-            opacity:1
+        opacity:1
       }); 
-  });
-   $("#histoire").mouseleave(function(){
-      $("#old").removeClass("wobble")
+    });
+
+    $("#histoire").mouseleave(function(){
+      $("#adress-boutiques").removeClass("wobble");
       $("#boutitext").animate({
-            opacity:0
+        opacity:0
       });  
-  });
+    });
+
+
     $("#actu").mouseenter(function(){
-      $(".clock").addClass("wobble")
+      $(".clock").addClass("wobble");
       $("#actutext").animate({
-            opacity:1
+        opacity:1
       }); 
-  });
-   $("#actu").mouseleave(function(){
-      $(".clock").removeClass("wobble")
+    });
+
+    $("#actu").mouseleave(function(){
+      $(".clock").removeClass("wobble");
       $("#actutext").animate({
-            opacity:0
+        opacity:0
       });  
-  });
+    });
 
 
-///clock
 
-var oClockAnalog = {
+
+/// CLOCK
+
+  var oClockAnalog = {
     aSecond:         [],
     dtDate:          new Date(),
     iCurrSecond:     -1,
@@ -276,4 +303,12 @@ var oClockAnalog = {
         //     }
         // }
     }
-};
+  };
+
+
+
+
+
+
+
+});

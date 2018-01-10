@@ -81,13 +81,39 @@ class CatalogueController extends Controller
         $categorie = $em->getRepository(Categorie::class) // lie à la bdd Categories dans le repository
                            ->findAll(); // affiche tout
 
-    // récupère la liste des produits de cette categorie
-     $listProduits = $em->getRepository(Produit::class)
+        // récupère la liste des produits de cette categorie
+         $listProduits = $em->getRepository(Produit::class)
                         ->findBy(["categorie" => $categorie]);
+
+
+        // permet d'afficher correctement le catalogue
+         echo json_encode($listProduits);   
+
 
         // transforme $categories local en variable utilisable dans le fichier catalogue.html.twig
         return $this->render("base/catalogue.html.twig", ["categorie" => $categorie, "listProduits" => $listProduits]);
     }
+
+
+
+
+
+
+
+    // ------------------------ TEST affichage Catalogue en Ajax
+    /**
+     * @Route("catalogue", name="catalogueAjax")
+     */
+    // liste toutes les categories
+    public function afficherCatalogueAjax()
+    {
+      require_once("templateajax.html.twig");
+    }
+
+
+
+
+
 
 
 
@@ -107,8 +133,6 @@ class CatalogueController extends Controller
                         ->findBy(["categorie" => $categorie]);
      return $this->render("base/manytoone.html.twig", ["categorie" => $categorie, "listProduits" => $listProduits]);
    }
-
-
 
 
 
